@@ -10,14 +10,15 @@
 			<fertilityMin>1</fertilityMin>
 			<fertilitySensitivity>0.8</fertilitySensitivity>
 			<growDays>30</growDays>
-      <harvestWork>1000</harvestWork>
-      <harvestYield>50</harvestYield>
-			<lifespanFraction>8</lifespanFraction>
-			<wildCommonalityMaxFraction>0.001</wildCommonalityMaxFraction>
-			<wildClusterSizeRange>
-				<min>3</min>
-				<max>8</max>
-			</wildClusterSizeRange>
+			<harvestWork>1000</harvestWork>
+			<harvestYield>50</harvestYield>
+			<lifespanDaysPerGrowDays>8</lifespanDaysPerGrowDays>
+			<wildClusterRadius>8</wildClusterRadius>
+			<wildClusterWeight>24</wildClusterWeight>
+			<wildOrder>3</wildOrder>
+			<sowResearchPrerequisites>
+				<li>TreeSowing</li>
+			  </sowResearchPrerequisites>
 		</plant>
 	</ThingDef>
 
@@ -96,7 +97,7 @@
 		</statBases>
 		<plant>
 			<growDays>35</growDays>
-			<lifespanFraction>6.857</lifespanFraction>
+			<lifespanDaysPerGrowDays>6.857</lifespanDaysPerGrowDays>
 			<leaflessGraphicPath>Cupro/Object/Plant/PersimmonTree_Normal</leaflessGraphicPath>
 			<harvestedThingDef>ZEN_EbonyWood</harvestedThingDef>
 			<wildBiomes>
@@ -158,20 +159,19 @@
 		<statBases>
 			<MaxHitPoints>100</MaxHitPoints>
 			<Beauty>1</Beauty>
+			<Nutrition>0.36</Nutrition>
 		</statBases>
 		<graphicData>
 			<texPath>Things/Plant/Grass</texPath>
 			<graphicClass>Graphic_Random</graphicClass>
 		</graphicData>
 		<hideAtSnowDepth>0.5</hideAtSnowDepth>
-		<ingestible>
-			<nutrition>0.36</nutrition>
-		</ingestible>
+		<ingestible />
 		<plant>
 			<fertilityMin>0.30</fertilityMin>
 			<fertilitySensitivity>0.8</fertilitySensitivity>
 			<growDays>2.5</growDays>
-			<lifespanFraction>10</lifespanFraction>
+			<lifespanDaysPerGrowDays>10</lifespanDaysPerGrowDays>
 			<leaflessGraphicPath>Things/Plant/Grass_Leafless</leaflessGraphicPath>
 			<sowWork>350</sowWork>
 			<sowMinSkill>4</sowMinSkill>
@@ -191,14 +191,10 @@
 				<BorealForest>0.6</BorealForest>
 				<Desert>0.2</Desert>
 			</wildBiomes>
-			<wildCommonalityMaxFraction>2.5</wildCommonalityMaxFraction>
-			<wildClusterSizeRange>
-				<min>25</min>
-				<max>45</max>
-			</wildClusterSizeRange>
+			<wildOrder>3</wildOrder>
 			<wildClusterRadius>4</wildClusterRadius>
+			<wildClusterWeight>24</wildClusterWeight>
 			<topWindExposure>0.4</topWindExposure>
-			<reproduces>false</reproduces>
 		</plant>
 	</ThingDef>
 
@@ -232,7 +228,7 @@
 				<li>Ground</li>
 			</sowTags>
 			<growDays>5</growDays>
-			<lifespanFraction>15</lifespanFraction>
+			<lifespanDaysPerGrowDays>15</lifespanDaysPerGrowDays>
 			<growMinGlow>0.4</growMinGlow>
 			<growOptimalGlow>0.8</growOptimalGlow>
 			<fertilityMin>0.65</fertilityMin>

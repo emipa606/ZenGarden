@@ -37,6 +37,7 @@
 		<statBases>
 			<MarketValue>4</MarketValue>
 			<Mass>0.05</Mass>
+			<Nutrition>0.1</Nutrition>
 		</statBases>
 		<comps>
 			<li Class="CompProperties_Rottable">
@@ -46,7 +47,6 @@
 		</comps>
 		<ingestible>
 			<preferability>RawTasty</preferability>
-			<nutrition>0.1</nutrition>
 			<tasteThought/>
 			<foodType>VegetableOrFruit</foodType>
 		</ingestible>

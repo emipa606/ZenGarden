@@ -11,7 +11,7 @@
 	    <li>Designator_Deconstruct</li>
       <li>Designator_PlanAdd</li>
       <li>Designator_PlanRemove</li> 
-      <li>Designator_SmoothFloor</li>
+      <li>Designator_SmoothSurface</li>
       <li>Designator_RemoveFloor</li>
     </specialDesignatorClasses>
   </DesignationCategoryDef>  

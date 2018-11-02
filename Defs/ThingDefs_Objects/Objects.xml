@@ -28,7 +28,10 @@
 
 	<ThingDef Name="ZenFountainBase" ParentName="ZenBase" Abstract="True">
 		<thingClass>ZenGarden.Building_Fountain</thingClass>
-		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsArt</li>
+		</thingCategories>
 		<altitudeLayer>Pawn</altitudeLayer>
 		<rotatable>false</rotatable>
 		<graphicData>
@@ -56,7 +59,7 @@
 				<compClass>CompQuality</compClass>
 			</li>
 			<li Class="CompProperties_Art">
-				<nameMaker>ArtName_Sculpture</nameMaker>
+				<nameMaker>NamerArtSculpture</nameMaker>
 				<descriptionMaker>ArtDescription_Sculpture</descriptionMaker>
 				<canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
 				<minQualityForArtistic>Excellent</minQualityForArtistic>
@@ -152,7 +155,7 @@
 		<pathCost>30</pathCost>
 		<fillPercent>0.30</fillPercent>
 		<building>
-      <isJoySource>true</isJoySource>
+			<joyKind>Meditative</joyKind>
 			<isSittable>true</isSittable>
 		</building>
 	</ThingDef>
@@ -313,13 +316,16 @@
 		<terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
 		<blockLight>true</blockLight>
 		<blockWind>true</blockWind>
-		<minifiedDef>MinifiedSculpture</minifiedDef>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsFurniture</li>
+		</thingCategories>
 		<comps>
 			<li>
 				<compClass>CompQuality</compClass>
 			</li>
 			<li Class="CompProperties_Art">
-				<nameMaker>ArtName_Sculpture</nameMaker>
+				<nameMaker>NamerArtSculpture</nameMaker>
 				<descriptionMaker>ArtDescription_Sculpture</descriptionMaker>
 				<canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
 				<minQualityForArtistic>Excellent</minQualityForArtistic>
@@ -376,13 +382,16 @@
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 		<blockLight>true</blockLight>
 		<blockWind>true</blockWind>
-		<minifiedDef>MinifiedFurniture</minifiedDef>
+		<minifiedDef>MinifiedThing</minifiedDef>
+		<thingCategories>
+			<li>BuildingsFurniture</li>
+		</thingCategories>
 		<comps>
 			<li>
 				<compClass>CompQuality</compClass>
 			</li>
 			<li Class="CompProperties_Art">
-				<nameMaker>ArtName_Furniture</nameMaker>
+				<nameMaker>NamerArtFurniture</nameMaker>
 				<descriptionMaker>ArtDescription_Furniture</descriptionMaker>
 				<canBeEnjoyedAsArt>true</canBeEnjoyedAsArt>
 				<minQualityForArtistic>Excellent</minQualityForArtistic>
@@ -486,6 +495,7 @@
 		<statBases>
 			<MaxHitPoints>350</MaxHitPoints>
 			<WorkToBuild>700</WorkToBuild>
+			<Mass>10</Mass>
 		</statBases>
 	</ThingDef>
 
@@ -502,6 +512,7 @@
 			<MaxHitPoints>700</MaxHitPoints>
 			<WorkToBuild>1400</WorkToBuild>
 			<Beauty>10</Beauty>
+			<Mass>25</Mass>
 		</statBases>
 	</ThingDef>
 
@@ -521,9 +532,11 @@
 			</linkFlags>
 		</graphicData>
 		<coversFloor>true</coversFloor>
-		<blueprintGraphicData>
-			<texPath>Cupro/Object/Linked/BorderPathBlueprint</texPath>
-		</blueprintGraphicData>
+		<building>
+			<blueprintGraphicData>
+				<texPath>Cupro/Object/Linked/BorderPathBlueprint</texPath>
+			</blueprintGraphicData>
+		</building>
 		<uiIconPath>Cupro/Object/Linked/BorderPathIcon</uiIconPath>
 		<statBases>
 			<WorkToBuild>180</WorkToBuild>
@@ -547,9 +560,11 @@
 			</linkFlags>
 		</graphicData>
 		<coversFloor>true</coversFloor>
-		<blueprintGraphicData>
-			<texPath>Cupro/Object/Linked/BorderPathBlueprint</texPath>
-		</blueprintGraphicData>
+		<building>
+			<blueprintGraphicData>
+				<texPath>Cupro/Object/Linked/BorderPathBlueprint</texPath>
+			</blueprintGraphicData>
+		</building>
 		<uiIconPath>Cupro/Object/Linked/BorderPondIcon</uiIconPath>
 		<statBases>
 			<WorkToBuild>180</WorkToBuild>

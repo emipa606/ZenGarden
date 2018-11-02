@@ -71,11 +71,11 @@ namespace ZenGarden {
 		}
 
 		// Not synced with CanGiveJob
-		public override Job JobOnCell(Pawn pawn, IntVec3 c) {
+		public override Job JobOnCell(Pawn pawn, IntVec3 c, bool forced = false) {
 			if (c.IsForbidden(pawn)) {
 				return null;
 			}
-			if (!GenPlant.GrowthSeasonNow(c, pawn.Map)) {
+			if (!PlantUtility.GrowthSeasonNow(c, pawn.Map)) {
 				return null;
 			}
 			if (wantedPlantDef == null) {
@@ -102,7 +102,7 @@ namespace ZenGarden {
 				return new Job(JobDefOf.CutPlant, plant);
 			}
 			else {
-				Thing thing2 = GenPlant.AdjacentSowBlocker(wantedPlantDef, c, pawn.Map);
+				Thing thing2 = PlantUtility.AdjacentSowBlocker(wantedPlantDef, c, pawn.Map);
 				if (thing2 != null) {
 					if (thing2 is Plant plant2 && pawn.CanReserve(plant2, 1, -1, null, false) && !plant2.IsForbidden(pawn)) {
 						IPlantToGrowSettable plantToGrowSettable = plant2.Position.GetPlantToGrowSettable(plant2.Map);
@@ -112,7 +112,7 @@ namespace ZenGarden {
 					}
 					return null;
 				}
-				if (wantedPlantDef.plant.sowMinSkill > 0 && pawn.skills != null && pawn.skills.GetSkill(SkillDefOf.Growing).Level < wantedPlantDef.plant.sowMinSkill) {
+				if (wantedPlantDef.plant.sowMinSkill > 0 && pawn.skills != null && pawn.skills.GetSkill(SkillDefOf.Plants).Level < wantedPlantDef.plant.sowMinSkill) {
 					return null;
 				}
 				int j = 0;
@@ -139,7 +139,7 @@ namespace ZenGarden {
 						j++;
 					}
 				}
-				if (!wantedPlantDef.CanEverPlantAt(c, pawn.Map) || !GenPlant.GrowthSeasonNow(c, pawn.Map) || !pawn.CanReserve(c, 1, -1, null, false)) {
+				if (!wantedPlantDef.CanEverPlantAt(c, pawn.Map) || !PlantUtility.GrowthSeasonNow(c, pawn.Map) || !pawn.CanReserve(c, 1, -1, null, false)) {
 					return null;
 				}
 				return new Job(ZenDefOf.ZEN_PlantsSowSecondary, c) {
