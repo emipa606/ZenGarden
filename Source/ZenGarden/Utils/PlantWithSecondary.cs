@@ -13,7 +13,7 @@ namespace ZenGarden
     {
 
         // If there is currently a seed for SeedsPlease, and the mod is installed, list it.
-        public ThingDef seedDef = null;
+        //public ThingDef seedDef = null;
 
         // Def reference for the secondary thing
         private SecondaryResource secondaryDef;
@@ -197,11 +197,11 @@ namespace ZenGarden
             secondaryDef = def.GetModExtension<SecondaryResource>();
 
             // If a SeedsPlease seed exists, and SeedsPlease is installed, assign it
-            string seed = secondaryDef.seedsPleaseSeedDef;
-            if (!seed.NullOrEmpty() && DefDatabase<ThingDef>.GetNamed(seed, false) != null && ModsConfig.ActiveModsInLoadOrder.Any(m => m.Name == "SeedsPlease"))
-            {
-                seedDef = DefDatabase<ThingDef>.GetNamed(seed);
-            }
+            //string seed = secondaryDef.seedsPleaseSeedDef;
+            //if (!seed.NullOrEmpty() && DefDatabase<ThingDef>.GetNamed(seed, false) != null && ModsConfig.ActiveModsInLoadOrder.Any(m => m.Name == "SeedsPlease"))
+            //{
+            //    seedDef = DefDatabase<ThingDef>.GetNamed(seed);
+            //}
 
             harvestDesignation = Static.DesignationHarvestSecondary;
 

@@ -91,20 +91,20 @@ namespace ZenGarden
                                 actor.records.Increment(RecordDefOf.PlantsHarvested);
 
                                 // If there is a SeedsPlease seed, try to drop it
-                                if (Plant.seedDef != null)
-                                {
-                                    int stack = Rand.RangeInclusive(-1, 1);
-                                    if (pawn.skills != null)
-                                    {
-                                        stack += GenMath.RoundRandom(pawn.skills.GetSkill(SkillDefOf.Plants).Level / 8f);
-                                    }
-                                    if (stack > 0)
-                                    {
-                                        Thing seed = ThingMaker.MakeThing(Plant.seedDef);
-                                        seed.stackCount = stack;
-                                        GenPlace.TryPlaceThing(seed, pawn.Position, pawn.Map, ThingPlaceMode.Near);
-                                    }
-                                }
+                                //if (Plant.seedDef != null)
+                                //{
+                                //    int stack = Rand.RangeInclusive(-1, 1);
+                                //    if (pawn.skills != null)
+                                //    {
+                                //        stack += GenMath.RoundRandom(pawn.skills.GetSkill(SkillDefOf.Plants).Level / 8f);
+                                //    }
+                                //    if (stack > 0)
+                                //    {
+                                //        Thing seed = ThingMaker.MakeThing(Plant.seedDef);
+                                //        seed.stackCount = stack;
+                                //        GenPlace.TryPlaceThing(seed, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+                                //    }
+                                //}
                             }
                         }
                         Plant.def.plant.soundHarvestFinish.PlayOneShot(actor);

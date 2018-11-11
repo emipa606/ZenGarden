@@ -58,6 +58,11 @@ namespace ZenGarden
 
         public override bool HasJobOnCell(Pawn pawn, IntVec3 c, bool forced = false)
         {
+            if(!c.InBounds(pawn.Map))
+            {
+                return false;
+            }
+
             List<Thing> list = c.GetThingList(pawn.Map);
             PlantWithSecondary plant = null;
             for (int t = 0; t < list.Count; t++)

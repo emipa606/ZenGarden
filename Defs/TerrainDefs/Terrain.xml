@@ -37,6 +37,7 @@
 		<tags>
 			<li>Road</li>
 		</tags>
+		<designatorDropdown>ZEN_Rough</designatorDropdown>
 	</TerrainDef>	
 
 	<TerrainDef Name="ZEN_NormalBase" ParentName="GravelFloorBase" Abstract="True">
@@ -53,6 +54,7 @@
 			needing to check multiple defs every time raked gravel is placed -->
 			<li>UnrakedGravel</li>
 		</tags>
+		<designatorDropdown>ZEN_Unraked</designatorDropdown>
 	</TerrainDef>	
 
 	<!--========== Base Inheritors ==========-->

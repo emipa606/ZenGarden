@@ -46,7 +46,6 @@
 				<MeleeWeapon_CooldownMultiplier>0.85</MeleeWeapon_CooldownMultiplier>
 			</statFactors>
 		</stuffProps>
-		<isTechHediff>true</isTechHediff>
 		<thingCategories>
 			<li>ResourcesRaw</li>
 		</thingCategories>
@@ -108,7 +107,6 @@
 				<MeleeWeapon_CooldownMultiplier>0.85</MeleeWeapon_CooldownMultiplier>
 			</statFactors>
 		</stuffProps>
-		<isTechHediff>true</isTechHediff>
 		<thingCategories>
 			<li>ResourcesRaw</li>
 		</thingCategories>
