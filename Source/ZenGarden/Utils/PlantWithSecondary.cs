@@ -153,12 +153,9 @@ namespace ZenGarden
                 seasons = Static.DisplayStat_GrowsInAllSeasons;
             }
 
-            yield return new StatDrawEntry(StatCategoryDefOf.PawnMisc, thingLabel + " " + "GrowingTime".Translate().ToLower(), secondaryDef.growDays.ToString("0.##") + " " + "Days".Translate());
-            yield return new StatDrawEntry(StatCategoryDefOf.PawnMisc, $"{thingLabel} {Static.DisplayStat_MinPlantGrowth}", secondaryDef.parentMinGrowth.ToStringPercent())
-            {
-                overrideReportText = Static.DisplayStat_MinGrowthReport
-            };
-            yield return new StatDrawEntry(StatCategoryDefOf.PawnMisc, $"{thingLabel} {Static.DisplayStat_LimitedGrowSeasons}", seasons);
+            yield return new StatDrawEntry(StatCategoryDefOf.PawnMisc, thingLabel + " " + "GrowingTime".Translate().ToLower(), secondaryDef.growDays.ToString("0.##") + " " + "Days".Translate(),"", 1);
+            yield return new StatDrawEntry(StatCategoryDefOf.PawnMisc, $"{thingLabel} {Static.DisplayStat_MinPlantGrowth}", secondaryDef.parentMinGrowth.ToStringPercent(), Static.DisplayStat_MinGrowthReport, 1);
+            yield return new StatDrawEntry(StatCategoryDefOf.PawnMisc, $"{thingLabel} {Static.DisplayStat_LimitedGrowSeasons}", seasons, "", 1);
 
         }
 

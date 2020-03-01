@@ -9,14 +9,15 @@
 		<layerable>true</layerable>
 		<designationCategory>ZEN_Decoration</designationCategory>
 		<edgeType>FadeRough</edgeType>
-		<acceptFilth>false</acceptFilth>
 		<avoidWander>true</avoidWander>
 		<takeFootprints>false</takeFootprints>
 		<holdSnow>true</holdSnow>
 		<!-- The stone is broken into gravel, so it shouldn't yield usable blocks -->
 		<resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
 		<fertility>0</fertility>
-		<acceptTerrainSourceFilth>false</acceptTerrainSourceFilth>
+		<filthAcceptanceMask>
+		  <li>Unnatural</li>
+		</filthAcceptanceMask>
 		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
 	</TerrainDef>
 

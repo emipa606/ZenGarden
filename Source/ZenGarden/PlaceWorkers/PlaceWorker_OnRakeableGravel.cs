@@ -5,7 +5,7 @@ namespace ZenGarden {
   internal class PlaceWorker_OnRakeableGravel : PlaceWorker {
 
 
-		public override AcceptanceReport AllowsPlacing(BuildableDef checkingDef, IntVec3 loc, Rot4 rot, Map map, Thing thingToIgnore = null) {
+		public override AcceptanceReport AllowsPlacing(BuildableDef checkingDef, IntVec3 loc, Rot4 rot, Map map, Thing thingToIgnore = null, Thing thing = null) {
 
       // Don't allow placing outside of the map
       if (!loc.InBounds(map)) {

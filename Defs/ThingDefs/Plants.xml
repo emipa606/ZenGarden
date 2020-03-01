@@ -180,10 +180,7 @@
 			<sowTags>
 				<li>Ground</li>
 			</sowTags>
-			<visualSizeRange>
-				<min>0.4</min>
-				<max>1</max>
-			</visualSizeRange>
+			<visualSizeRange>0.4~1.0</visualSizeRange>
 			<wildBiomes>
 				<TropicalRainforest>1.5</TropicalRainforest>
 				<TemperateForest>1</TemperateForest>
@@ -234,10 +231,7 @@
 			<fertilityMin>0.65</fertilityMin>
 			<fertilitySensitivity>0.6</fertilitySensitivity>
 			<topWindExposure>0.15</topWindExposure>
-			<visualSizeRange>
-				<min>0.8</min>
-				<max>1.75</max>
-			</visualSizeRange>
+			<visualSizeRange>0.8~1.75</visualSizeRange>
 		</plant>
 	</ThingDef>
 
