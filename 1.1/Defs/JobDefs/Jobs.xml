@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<JobDef>
+		<defName>ZEN_SitAtScenicBench</defName>
+		<driverClass>ZenGarden.JobDriver_SitAtScenicBench</driverClass>
+		<reportString>Enjoying scenery.</reportString>
+		<joyDuration>3000</joyDuration>
+		<joyGainRate>0.1</joyGainRate>
+		<joyKind>Meditative</joyKind>
+	</JobDef>
+
+	<JobDef>
+		<defName>ZEN_PlantsHarvestSecondary</defName>
+		<driverClass>ZenGarden.JobDriver_PlantsHarvestSecondary</driverClass>
+		<reportString>harvesting TargetA.</reportString>
+	</JobDef>
+
+	<JobDef>
+		<defName>ZEN_PlantsSowSecondary</defName>
+		<driverClass>ZenGarden.JobDriver_PlantsSowSecondary</driverClass>
+		<reportString>sowing TargetA.</reportString>
+	</JobDef>
+
+</Defs>
