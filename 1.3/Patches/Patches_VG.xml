@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+		  <li>VGP Vegetable Garden</li>
+		</mods>
+		 <match Class="PatchOperationSequence">
+		 <!--<success>Always</success>-->
+			  <operations>
+				
+			   <li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="ZEN_Cherries"]</xpath>
+					<value>
+						<thingCategories>
+							<li>FruitFoodRaw</li>
+						</thingCategories>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="ZEN_Persimmon"]</xpath>
+					<value>
+						<thingCategories>
+							<li>FruitFoodRaw</li>
+						</thingCategories>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThingDef[defName="ZEN_Crabapples"]</xpath>
+					<value>
+						<thingCategories>
+							<li>FruitFoodRaw</li>
+						</thingCategories>
+					</value>
+				</li>
+			</operations>
+		 </match>
+			
+	</Operation>
+	
+</Patch>

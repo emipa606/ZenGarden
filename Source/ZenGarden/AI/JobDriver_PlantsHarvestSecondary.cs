@@ -118,7 +118,7 @@ namespace ZenGarden
             cut.FailOnDespawnedNullOrForbidden(TargetIndex.A);
             cut.FailOnCannotTouch(TargetIndex.A, PathEndMode.Touch);
             cut.defaultCompleteMode = ToilCompleteMode.Never;
-            cut.WithEffect(EffecterDefOf.Harvest, TargetIndex.A);
+            cut.WithEffect(EffecterDefOf.Harvest_Tree, TargetIndex.A);
             cut.WithProgressBar(TargetIndex.A, () => workDone / Duration, true, -0.5f);
             cut.PlaySustainerOrSound(() => Plant.def.plant.soundHarvesting);
             yield return cut;

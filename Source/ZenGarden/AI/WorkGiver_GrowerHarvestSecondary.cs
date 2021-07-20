@@ -27,7 +27,7 @@ namespace ZenGarden
 
             foreach (Thing plant in list)
             {
-                if (pawn.CanReach(plant, PathEndMode.OnCell, pawn.NormalMaxDanger(), false, TraverseMode.ByPawn))
+                if (pawn.CanReach(plant, PathEndMode.OnCell, pawn.NormalMaxDanger(), false))
                 {
                     yield return plant.Position;
                 }
@@ -43,7 +43,7 @@ namespace ZenGarden
                     }
                     else if (!orchardZone.ContainsStaticFire)
                     {
-                        if (pawn.CanReach(orchardZone.Cells[0], PathEndMode.OnCell, pawn.NormalMaxDanger(), false, TraverseMode.ByPawn))
+                        if (pawn.CanReach(orchardZone.Cells[0], PathEndMode.OnCell, pawn.NormalMaxDanger(), false))
                         {
                             for (int k = 0; k < orchardZone.cells.Count; k++)
                             {
@@ -81,12 +81,12 @@ namespace ZenGarden
         {
             Job job = new Job(ZenDefOf.ZEN_PlantsHarvestSecondary);
             Map map = pawn.Map;
-            Room room = c.GetRoom(map, RegionType.Set_Passable);
+            Room room = c.GetRoom(map);
             float num = 0f;
             for (int i = 0; i < 40; i++)
             {
                 IntVec3 c2 = c + GenRadial.RadialPattern[i];
-                if (c.GetRoom(map, RegionType.Set_Passable) == room)
+                if (c.GetRoom(map) != room || !HasJobOnCell(pawn, c))
                 {
                     if (HasJobOnCell(pawn, c2))
                     {
@@ -158,12 +158,12 @@ namespace ZenGarden
 
             Job job = new Job(ZenDefOf.ZEN_PlantsHarvestSecondary);
             Map map = pawn.Map;
-            Room room = t.Position.GetRoom(map, RegionType.Set_Passable);
+            Room room = t.Position.GetRoom(map);
             float num = 0f;
             for (int i = 0; i < 40; i++)
             {
                 IntVec3 c2 = t.Position + GenRadial.RadialPattern[i];
-                if (c2.GetRoom(map, RegionType.Set_Passable) == room)
+                if (c2.GetRoom(map) != room || !HasJobOnCell(pawn, c2))
                 {
                     if (HasHarvestJobOnCell(pawn, c2))
                     {
