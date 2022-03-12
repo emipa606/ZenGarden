@@ -1,21 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Zen Garden</name>
-  <author>mantrasong</author>
-  <url>https://ludeon.com/forums/index.php?topic=13400.0</url>
+  <name>Zen Garden (Continued)</name>
+  <packageId>Mlie.ZenGarden</packageId>
+  <author>cuproPanda</author>
+  <url>https://github.com/emipa606/ZenGarden</url>
   <supportedVersions>
-	<li>1.0</li>
-	<li>1.1</li>
-	<li>1.2</li>
+    <li>1.0</li>
+    <li>1.1</li>
+    <li>1.2</li>
+    <li>1.3</li>
   </supportedVersions>
-  <packageId>Mantrasong.ZenGarden.1</packageId>
-  <description>Adds decorative garden stuff.</description>
   <modDependencies>
-		<li>
-			<packageId>brrainz.harmony</packageId>
-			<displayName>Harmony</displayName>
-			<steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
-			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
-		</li>
-	</modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+  </loadAfter>
+  <description>[img]https://i.imgur.com/buuPQel.png[/img]
+Update of cuproPandas mod
+https://steamcommunity.com/sharedfiles/filedetails/?id=1221867010
+based on mantrasongs updated version
+https://steamcommunity.com/sharedfiles/filedetails/?id=1554147049
+
+- Reported issues on mantrasongs versions mod-page should be fixed.
+
+[img]https://i.imgur.com/pufA0kM.png[/img]
+
+[table]
+    [tr]
+        [td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
+        [td][url=https://github.com/emipa606/ZenGarden][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+    [/tr]
+[/table]
+	
+[img]https://i.imgur.com/Z4GOv8H.png[/img]
+This mod adds various zen and rock garden themed decorations. Researching stonecutting unlocks everything.
+
+[h1]Workshop ID:[/h1]
+1221867010
+
+[h1]Items Added:[/h1]
+[b]Cherry Wood:[/b] Pink colored wood
+[b]Ebony Wood:[/b] Black colored wood
+[b]Zen Cherries:[/b] Secondary resource of the Zen Cherry Tree
+[b]Persimmon:[/b] Secondary resource of the Persimmon Tree
+[b]Crabapple:[/b] Secondary resource of the Crabapple Tree
+
+[h1]Objects Added:[/h1]
+[b]Border Path:[/b] A nice looking border for placing along important paths, hallways, farms, etc.
+[b]Border Pond:[/b] Similar to the border path, but with water
+[b]Border Path Pillar:[/b] A pillar made to fit along a border path or border pond. Can be used to support roofs.
+[b]Stacked Rocks:[/b] A series of stacked rocks, available in two sizes.
+[b]Artificial Hedge:[/b] Decorative hedges. Colonists can pass through them.
+[b]Tall Hedge:[/b] A hedge grown for decorative purposes.
+[b]Dense Grass:[/b] Tall, thick grass grown to hide the dirt ground.
+[b]Half Wall:[/b] A simple stone half wall, can be built with or without powered lanterns.
+[b]Flower arch:[/b] Used to decorate paths or wedding spots. Vines grow when it's not too cold, and flowers bloom in the spring and summer seasons
+[b]Scenic Bench:[/b] Bench for colonists to sit at that gains beauty based on surroundings. Additional beauty is calculated for plants, water, and rivers.
+[b]Fountain:[/b] A decorative fountain of water, available in two sizes.
+[b]Standing Lantern:[/b] Decorative lantern for indoor areas.
+[b]Pedestal Lantern:[/b] Outdoors powered lantern for garden areas.
+[b]Zen Cherry Tree:[/b] A vibrant and colorful tree often grown for decoration. Produces zen cherries in the spring and summer. Can also be chopped down for cherrywood.
+[b]Persimmon Tree:[/b] A hardwood tree well known for its delicious soft fruit and uniquely dark heartwood. Produces persimmons in the fall and winter. Can also be chopped down for ebony wood.
+[b]Crabapple Tree:[/b] A colorful hardwood tree which grows small apples. Produces crabapples in the summer and fall. Can also be chopped down for wood.
+
+[h1]Other Features:[/h1]
+[b]Orchard Zone:[/b] Growing zone that prevents plants from being harvested, and instead allows harvesting of the secondary resources.
+[b]Rough Gravel:[/b] Cheaper gravel flooring that cannot be raked. May be found in the world as paths
+[b]Gravel Floor:[/b] A simple gravel floor that can be raked into vertical, horizontal, or curved patterns - or left unraked
+
+
+
+[h1]Save Compatability[/h1]
+This mod can be added to existing saves.
+Always back up your saves before adding new mods as there is always the possibility for issues.
+
+[h1]Mod Compatability[/h1]
+[b]Architect Sense:[/b] All gravel floors grouped together 
+[b]Kura's Extra Minerals:[/b] Gravel floors for stone types that do not overlap Cupro's Stones
+[b]Cupro's Stones:[/b] Gravel floors for stone types
+[b]Medieval Times:[/b] Desk requires Cherry Wood (based on description)
+[b]Survivalist's Additions:[/b] Saguaro Cactus can be grown in an Orchard Zone to produce Prickly Pear; Cherries, Persimmon, and Crabapple can be used to make Vinegar 
+[b]SeedsPlease:[/b] Seeds added for orchard trees 
+
+[h1]Older Versions and Update Notes[/h1]
+All versions of this mod can be found on my [url=https://github.com/cuproPanda/Zen-Garden/releases]GitHub[/url]. Each release has info on what has changed from the previous release.
+
+[img]https://i.imgur.com/PwoNOj4.png[/img]
+[list]
+[*] See if the the error persists if you just have this mod and its requirements active.
+[*] If not, try adding your other mods until it happens again.
+[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] and command Ctrl+F12
+[*] For best support, please use the Discord-channel for error-reporting.
+[*] Do not report errors by making a discussion-thread, I get no notification of that.
+[*] If you have the solution for a problem, please post it to the GitHub repository.
+[/list]</description>
 </ModMetaData>

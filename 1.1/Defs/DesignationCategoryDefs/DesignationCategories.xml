@@ -1,19 +1,17 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-	
-   <DesignationCategoryDef>
+  <DesignationCategoryDef>
     <defName>ZEN_Decoration</defName>
     <label>Decoration</label>
     <description>Zen garden decorations.</description>
     <order>107</order>
     <specialDesignatorClasses>
       <li>Designator_Cancel</li>
-	    <li>Designator_Deconstruct</li>
+      <li>Designator_Deconstruct</li>
       <li>Designator_PlanAdd</li>
-      <li>Designator_PlanRemove</li> 
+      <li>Designator_PlanRemove</li>
       <li>Designator_SmoothSurface</li>
       <li>Designator_RemoveFloor</li>
     </specialDesignatorClasses>
-  </DesignationCategoryDef>  
-  
+  </DesignationCategoryDef>
 </Defs>

@@ -1,132 +1,137 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-
-using UnityEngine;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
-namespace ZenGarden
+namespace ZenGarden;
+
+public class Zone_Orchard : Zone, IPlantToGrowSettable
 {
+    public bool allowSow = true;
 
-    public class Zone_Orchard : Zone, IPlantToGrowSettable
+    private ThingDef plantDefToGrow = ZenDefOf.ZEN_PlantTreeCherry;
+
+
+    public Zone_Orchard()
     {
+    }
 
-        private ThingDef plantDefToGrow = ZenDefOf.ZEN_PlantTreeCherry;
-        public bool allowSow = true;
-        public bool CanAcceptSowNow() => allowSow;
 
-        IEnumerable<IntVec3> IPlantToGrowSettable.Cells => Cells;
+    public Zone_Orchard(ZoneManager zoneManager) : base(Static.LabelOrchardZone, zoneManager)
+    {
+    }
 
-        public override bool IsMultiselectable => true;
+    public override bool IsMultiselectable => true;
 
-        protected override Color NextZoneColor
+    protected override Color NextZoneColor => ZoneColorUtility.NextGrowingZoneColor();
+
+    public bool CanAcceptSowNow()
+    {
+        return allowSow;
+    }
+
+    IEnumerable<IntVec3> IPlantToGrowSettable.Cells => Cells;
+
+
+    public ThingDef GetPlantDefToGrow()
+    {
+        return plantDefToGrow;
+    }
+
+    public void SetPlantDefToGrow(ThingDef plantDef)
+    {
+        if (plantDef.thingClass == typeof(PlantWithSecondary))
         {
-            get
-            {
-                return ZoneColorUtility.NextGrowingZoneColor();
-            }
+            plantDefToGrow = plantDef;
+        }
+    }
+
+    public override void AddCell(IntVec3 c)
+    {
+        base.AddCell(c);
+        foreach (var t in Map.thingGrid.ThingsListAt(c))
+        {
+            Designator_PlantsHarvestWood.PossiblyWarnPlayerImportantPlantDesignateCut(t);
+        }
+    }
+
+    public override IEnumerable<Gizmo> GetZoneAddGizmos()
+    {
+        yield return DesignatorUtility.FindAllowedDesignator<Designator_ZoneAdd_Orchard_Expand>();
+    }
+
+    public override void ExposeData()
+    {
+        base.ExposeData();
+        Scribe_Defs.Look(ref plantDefToGrow, "plantDefToGrow");
+        Scribe_Values.Look(ref allowSow, "allowSow", true);
+    }
+
+
+    public override IEnumerable<Gizmo> GetGizmos()
+    {
+        foreach (var g in base.GetGizmos())
+        {
+            yield return g;
         }
 
-
-        public Zone_Orchard()
+        yield return SecondaryPlantToGrowSettableUtility.SetPlantCommand(this);
+        yield return new Command_Toggle
         {
-        }
+            defaultLabel = "CommandAllowSow".Translate(),
+            defaultDesc = "CommandAllowSowDesc".Translate(),
+            hotKey = KeyBindingDefOf.Command_ItemForbid,
+            icon = TexCommand.ForbidOn,
+            isActive = () => allowSow,
+            toggleAction = delegate { allowSow = !allowSow; }
+        };
+    }
 
 
-        public Zone_Orchard(ZoneManager zoneManager) : base(Static.LabelOrchardZone, zoneManager)
+    public override string GetInspectString()
+    {
+        var text = string.Empty;
+        if (Cells.NullOrEmpty())
         {
-        }
-
-
-        public override void ExposeData()
-        {
-            base.ExposeData();
-            Scribe_Defs.Look(ref plantDefToGrow, "plantDefToGrow");
-            Scribe_Values.Look(ref allowSow, "allowSow", true, false);
-        }
-
-
-        public override IEnumerable<Gizmo> GetGizmos()
-        {
-            foreach (Gizmo g in base.GetGizmos())
-            {
-                yield return g;
-            }
-            yield return SecondaryPlantToGrowSettableUtility.SetPlantCommand(this);
-            yield return new Command_Toggle
-            {
-                defaultLabel = "CommandAllowSow".Translate(),
-                defaultDesc = "CommandAllowSowDesc".Translate(),
-                hotKey = KeyBindingDefOf.Command_ItemForbid,
-                icon = TexCommand.ForbidOn,
-                isActive = (() => allowSow),
-                toggleAction = delegate
-                {
-                    allowSow = !allowSow;
-                }
-            };
-        }
-
-
-        public override string GetInspectString()
-        {
-            string text = string.Empty;
-            if (!Cells.NullOrEmpty())
-            {
-                IntVec3 c = Cells.First();
-                if (c.UsesOutdoorTemperature(Map))
-                {
-                    string text2 = text;
-                    text = string.Concat(new string[]
-                    {
-                        text2,
-                        "OutdoorGrowingPeriod".Translate(),
-                        ": ",
-                        Zone_Growing.GrowingQuadrumsDescription(Map.Tile),
-                        "\n"
-                    });
-                }
-                if (PlantUtility.GrowthSeasonNow(c, Map))
-                {
-                    text += "GrowSeasonHereNow".Translate();
-                }
-                else
-                {
-                    text += "CannotGrowBadSeasonTemperature".Translate();
-                }
-            }
             return text;
         }
 
-
-        public static string GrowingQuadrumsDescription(int tile)
+        var c = Cells.First();
+        if (c.UsesOutdoorTemperature(Map))
         {
-            List<Twelfth> list = GenTemperature.TwelfthsInAverageTemperatureRange(tile, 10f, 42f);
-            if (list.NullOrEmpty())
-            {
-                return "NoGrowingPeriod".Translate();
-            }
-            if (list.Count == 12)
-            {
-                return "GrowYearRound".Translate();
-            }
-            return "PeriodDays".Translate(list.Count * 5
-            ) + " (" + QuadrumUtility.QuadrumsRangeLabel(list) + ")";
+            var text2 = text;
+            text = string.Concat(text2, "OutdoorGrowingPeriod".Translate(), ": ",
+                Zone_Growing.GrowingQuadrumsDescription(Map.Tile), "\n");
         }
 
-
-        public ThingDef GetPlantDefToGrow()
+        if (PlantUtility.GrowthSeasonNow(c, Map))
         {
-            return plantDefToGrow;
+            text += "GrowSeasonHereNow".Translate();
+        }
+        else
+        {
+            text += "CannotGrowBadSeasonTemperature".Translate();
         }
 
+        return text;
+    }
 
-        public void SetPlantDefToGrow(ThingDef plantDef)
+
+    public static string GrowingQuadrumsDescription(int tile)
+    {
+        var list = GenTemperature.TwelfthsInAverageTemperatureRange(tile, 10f, 42f);
+        if (list.NullOrEmpty())
         {
-            if (plantDef.thingClass == typeof(PlantWithSecondary))
-            {
-                plantDefToGrow = plantDef;
-            }
+            return "NoGrowingPeriod".Translate();
         }
+
+        if (list.Count == 12)
+        {
+            return "GrowYearRound".Translate();
+        }
+
+        return "PeriodDays".Translate(list.Count * 5
+        ) + " (" + QuadrumUtility.QuadrumsRangeLabel(list) + ")";
     }
 }

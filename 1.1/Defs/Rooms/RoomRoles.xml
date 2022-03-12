@@ -1,6 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  
   <RoomRoleDef>
     <defName>ZEN_ZenGarden</defName>
     <label>zen garden</label>
@@ -10,5 +9,4 @@
       <li>Space</li>
     </relatedStats>
   </RoomRoleDef>
-
 </Defs>

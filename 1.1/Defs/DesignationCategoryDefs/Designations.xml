@@ -1,16 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
-	<DesignationDef>
-		<defName>ZEN_Designator_PlantsHarvestSecondary</defName>
-		<texturePath>Cupro/UI/Designations/HarvestSecondary</texturePath>
-		<targetType>Thing</targetType>
-	</DesignationDef>
-
-	<DesignationDef>
-		<defName>ZEN_Designator_OrchardZoneAdd</defName>
-		<texturePath>Cupro/UI/Designations/ZoneCreate_Orchard</texturePath>
-		<targetType>Cell</targetType>
-	</DesignationDef>
-
+  <DesignationDef>
+    <defName>ZEN_Designator_PlantsHarvestSecondary</defName>
+    <texturePath>Cupro/UI/Designations/HarvestSecondary</texturePath>
+    <targetType>Thing</targetType>
+  </DesignationDef>
+  <DesignationDef>
+    <defName>ZEN_Designator_OrchardZoneAdd</defName>
+    <texturePath>Cupro/UI/Designations/ZoneCreate_Orchard</texturePath>
+    <targetType>Cell</targetType>
+  </DesignationDef>
 </Defs>

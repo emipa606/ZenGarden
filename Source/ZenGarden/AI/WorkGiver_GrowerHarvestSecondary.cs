@@ -1,186 +1,148 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-
 using RimWorld;
 using Verse;
 using Verse.AI;
+using Verse.AI.Group;
 
-namespace ZenGarden
+namespace ZenGarden;
+
+public class WorkGiver_GrowerHarvestSecondary : WorkGiver_Grower
 {
+    public override PathEndMode PathEndMode => PathEndMode.Touch;
 
-    public class WorkGiver_GrowerHarvestSecondary : WorkGiver_Scanner
+
+    public override IEnumerable<IntVec3> PotentialWorkCellsGlobal(Pawn pawn)
     {
+        var list = pawn.Map.listerThings.ThingsMatching(ThingRequest.ForGroup(ThingRequestGroup.Plant))
+            .Where(p => p is PlantWithSecondary);
+        var zonesList = pawn.Map.zoneManager.AllZones;
 
-        public override PathEndMode PathEndMode
+        foreach (var plant in list)
         {
-            get
+            if (pawn.CanReach(plant, PathEndMode.OnCell, pawn.NormalMaxDanger()))
             {
-                return PathEndMode.Touch;
+                yield return plant.Position;
             }
         }
 
-
-        public override IEnumerable<IntVec3> PotentialWorkCellsGlobal(Pawn pawn)
+        foreach (var zone in zonesList)
         {
-            IEnumerable<Thing> list = pawn.Map.listerThings.ThingsMatching(ThingRequest.ForGroup(ThingRequestGroup.Plant)).Where(p => p is PlantWithSecondary);
-            List<Zone> zonesList = pawn.Map.zoneManager.AllZones;
-
-            foreach (Thing plant in list)
+            if (zone is not Zone_Orchard orchardZone)
             {
-                if (pawn.CanReach(plant, PathEndMode.OnCell, pawn.NormalMaxDanger(), false, TraverseMode.ByPawn))
-                {
-                    yield return plant.Position;
-                }
+                continue;
             }
 
-            for (int z = 0; z < zonesList.Count; z++)
+            if (orchardZone.cells.Count == 0)
             {
-                if (zonesList[z] is Zone_Orchard orchardZone)
-                {
-                    if (orchardZone.cells.Count == 0)
-                    {
-                        Log.ErrorOnce("Orchard zone has 0 cells: " + orchardZone, -563487);
-                    }
-                    else if (!orchardZone.ContainsStaticFire)
-                    {
-                        if (pawn.CanReach(orchardZone.Cells[0], PathEndMode.OnCell, pawn.NormalMaxDanger(), false, TraverseMode.ByPawn))
-                        {
-                            for (int k = 0; k < orchardZone.cells.Count; k++)
-                            {
-                                yield return orchardZone.cells[k];
-                            }
-                        }
-                    }
-                }
+                Log.ErrorOnce("Orchard zone has 0 cells: " + orchardZone, -563487);
+                continue;
+            }
+
+            if (orchardZone.ContainsStaticFire ||
+                !pawn.CanReach(orchardZone.Cells[0], PathEndMode.OnCell, pawn.NormalMaxDanger()))
+            {
+                continue;
+            }
+
+            foreach (var intVec3 in orchardZone.cells)
+            {
+                yield return intVec3;
             }
         }
+    }
 
 
-        public override bool HasJobOnCell(Pawn pawn, IntVec3 c, bool forced = false)
+    public override bool HasJobOnCell(Pawn pawn, IntVec3 c, bool forced = false)
+    {
+        var plant = c.GetPlant(pawn.Map);
+        if (plant == null)
         {
-            if(!c.InBounds(pawn.Map))
-            {
-                return false;
-            }
-
-            List<Thing> list = c.GetThingList(pawn.Map);
-            PlantWithSecondary plant = null;
-            for (int t = 0; t < list.Count; t++)
-            {
-                if (list[t] is PlantWithSecondary)
-                {
-                    plant = (PlantWithSecondary)list[t];
-                    break;
-                }
-            }
-            return plant != null && !plant.IsForbidden(pawn) && plant.Sec_HarvestableNow && pawn.CanReserve(plant) && HarvestableLocation(plant, c);
+            return false;
         }
 
-
-        public override Job JobOnCell(Pawn pawn, IntVec3 c, bool forced = false)
+        if (plant.IsForbidden(pawn))
         {
-            Job job = new Job(ZenDefOf.ZEN_PlantsHarvestSecondary);
-            Map map = pawn.Map;
-            Room room = c.GetRoom(map, RegionType.Set_Passable);
-            float num = 0f;
-            for (int i = 0; i < 40; i++)
-            {
-                IntVec3 c2 = c + GenRadial.RadialPattern[i];
-                if (c.GetRoom(map, RegionType.Set_Passable) == room)
-                {
-                    if (HasJobOnCell(pawn, c2))
-                    {
-                        Plant plant = c2.GetPlant(map);
-                        num += 250;
-                        if (num > 2400f)
-                        {
-                            break;
-                        }
-                        job.AddQueuedTarget(TargetIndex.A, plant);
-                    }
-                }
-            }
-            if (job.targetQueueA != null && job.targetQueueA.Count >= 3)
-            {
-                job.targetQueueA.SortBy((LocalTargetInfo targ) => targ.Cell.DistanceToSquared(pawn.Position));
-            }
-            return job;
+            return false;
         }
 
-
-
-
-
-        private bool HasHarvestJobOnCell(Pawn pawn, IntVec3 c)
+        if (!(plant is PlantWithSecondary plantWithSecondary))
         {
-            Plant plant = c.GetPlant(pawn.Map);
-            if (!(plant is PlantWithSecondary))
-            {
-                return false;
-            }
-            PlantWithSecondary sec = (PlantWithSecondary)plant;
-            return plant != null &&
-                !plant.IsForbidden(pawn) &&
-                sec.Sec_HarvestableNow &&
-                plant.LifeStage == PlantLifeStage.Mature &&
-                pawn.CanReserve(plant, 1, -1, null, false) &&
-                HarvestableLocation(plant, c);
+            return false;
         }
 
-
-        private bool HarvestableLocation(Plant plant, IntVec3 c)
+        if (!plantWithSecondary.Sec_HarvestableNow)
         {
-            if (c.GetZone(plant.Map) is Zone_Orchard)
-            {
-                return true;
-            }
-            return plant.Map.designationManager.DesignationOn(plant) != null && plant.Map.designationManager.DesignationOn(plant).def == ZenDefOf.ZEN_Designator_PlantsHarvestSecondary;
+            return false;
         }
 
-
-        public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
+        if (plantWithSecondary.LifeStage != PlantLifeStage.Mature)
         {
-            if (t.def.category != ThingCategory.Plant)
-            {
-                return null;
-            }
-
-            if (!(t is PlantWithSecondary))
-            {
-                return null;
-            }
-
-            PlantWithSecondary plant = (PlantWithSecondary)t;
-            if (!plant.Sec_HarvestableNow)
-            {
-                return null;
-            }
-
-            Job job = new Job(ZenDefOf.ZEN_PlantsHarvestSecondary);
-            Map map = pawn.Map;
-            Room room = t.Position.GetRoom(map, RegionType.Set_Passable);
-            float num = 0f;
-            for (int i = 0; i < 40; i++)
-            {
-                IntVec3 c2 = t.Position + GenRadial.RadialPattern[i];
-                if (c2.GetRoom(map, RegionType.Set_Passable) == room)
-                {
-                    if (HasHarvestJobOnCell(pawn, c2))
-                    {
-                        num += 250f;
-                        if (num > 2400f)
-                        {
-                            break;
-                        }
-                        job.AddQueuedTarget(TargetIndex.A, plant);
-                    }
-                }
-            }
-            if (job.targetQueueA != null && job.targetQueueA.Count >= 3)
-            {
-                job.targetQueueA.SortBy((LocalTargetInfo targ) => targ.Cell.DistanceToSquared(pawn.Position));
-            }
-            return job;
+            return false;
         }
+
+        if (!pawn.CanReserve(plantWithSecondary, 1, -1, null, forced))
+        {
+            return false;
+        }
+
+        return HarvestableLocation(plantWithSecondary, c);
+    }
+
+    public override bool ShouldSkip(Pawn pawn, bool forced = false)
+    {
+        return pawn.GetLord() != null || base.ShouldSkip(pawn, forced);
+    }
+
+    public override Job JobOnCell(Pawn pawn, IntVec3 c, bool forced = false)
+    {
+        var job = new Job(ZenDefOf.ZEN_PlantsHarvestSecondary);
+        var map = pawn.Map;
+        var room = c.GetRoom(map);
+        var num = 0f;
+        Plant plant;
+        if (c.GetRoom(map) == room && HasJobOnCell(pawn, c))
+        {
+            plant = c.GetPlant(map);
+            job.AddQueuedTarget(TargetIndex.A, plant);
+        }
+
+        for (var i = 0; i < 40; i++)
+        {
+            var c2 = c + GenRadial.RadialPattern[i];
+
+            if (!HasJobOnCell(pawn, c2))
+            {
+                continue;
+            }
+
+            num += 250;
+            if (num > 2400f)
+            {
+                break;
+            }
+
+            plant = c2.GetPlant(map);
+
+            job.AddQueuedTarget(TargetIndex.A, plant);
+        }
+
+        if (job.targetQueueA is { Count: >= 3 })
+        {
+            job.targetQueueA.SortBy(targ => targ.Cell.DistanceToSquared(pawn.Position));
+        }
+
+        return job;
+    }
+
+
+    private bool HarvestableLocation(Plant plant, IntVec3 c)
+    {
+        if (c.GetZone(plant.Map) is Zone_Orchard)
+        {
+            return true;
+        }
+
+        return plant.Map.designationManager.DesignationOn(plant)?.def == ZenDefOf.ZEN_Designator_PlantsHarvestSecondary;
     }
 }
