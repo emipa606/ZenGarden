@@ -44,10 +44,7 @@ public class JobDriver_PlantsSowSecondary : JobDriver
             tickAction = delegate
             {
                 var actor = GetActor();
-                if (actor.skills != null)
-                {
-                    actor.skills.Learn(SkillDefOf.Plants, 0.11f);
-                }
+                actor.skills?.Learn(SkillDefOf.Plants, 0.11f);
 
                 var statValue = actor.GetStatValue(StatDefOf.PlantWorkSpeed);
                 var plant = Plant;

@@ -15,12 +15,7 @@ public class WorkGiver_GrowerSowSecondary : WorkGiver_Scanner
     private ThingDef CalculateWantedPlantDef(IntVec3 c, Map map)
     {
         var plantToGrowSettable = c.GetPlantToGrowSettable(map);
-        if (plantToGrowSettable == null)
-        {
-            return null;
-        }
-
-        return plantToGrowSettable.GetPlantDefToGrow();
+        return plantToGrowSettable?.GetPlantDefToGrow();
     }
 
 
@@ -161,12 +156,9 @@ public class WorkGiver_GrowerSowSecondary : WorkGiver_Scanner
                 return null;
             }
 
-            if (!PlantUtility.PawnWillingToCutPlant_Job(plant, pawn))
-            {
-                return null;
-            }
-
-            return JobMaker.MakeJob(JobDefOf.CutPlant, plant);
+            return !PlantUtility.PawnWillingToCutPlant_Job(plant, pawn)
+                ? null
+                : JobMaker.MakeJob(JobDefOf.CutPlant, plant);
         }
 
         var thing2 = PlantUtility.AdjacentSowBlocker(wantedPlantDef, c, pawn.Map);
@@ -190,12 +182,9 @@ public class WorkGiver_GrowerSowSecondary : WorkGiver_Scanner
                 return null;
             }
 
-            if (!PlantUtility.PawnWillingToCutPlant_Job(plant2, pawn))
-            {
-                return null;
-            }
-
-            return JobMaker.MakeJob(JobDefOf.CutPlant, plant2);
+            return !PlantUtility.PawnWillingToCutPlant_Job(plant2, pawn)
+                ? null
+                : JobMaker.MakeJob(JobDefOf.CutPlant, plant2);
         }
 
         if (wantedPlantDef.plant.sowMinSkill > 0 && pawn.skills != null &&
@@ -216,32 +205,24 @@ public class WorkGiver_GrowerSowSecondary : WorkGiver_Scanner
                 return null;
             }
 
-            if (thing3.def.category == ThingCategory.Plant)
+            if (thing3.def.category != ThingCategory.Plant)
             {
-                if (thing3.IsForbidden(pawn))
-                {
-                    return null;
-                }
-
-                if (zone_Growing is { allowCut: false })
-                {
-                    return null;
-                }
-
-                if (!PlantUtility.PawnWillingToCutPlant_Job(thing3, pawn))
-                {
-                    return null;
-                }
-
-                return JobMaker.MakeJob(JobDefOf.CutPlant, thing3);
+                return thing3.def.EverHaulable ? HaulAIUtility.HaulAsideJobFor(pawn, thing3) : null;
             }
 
-            if (thing3.def.EverHaulable)
+            if (thing3.IsForbidden(pawn))
             {
-                return HaulAIUtility.HaulAsideJobFor(pawn, thing3);
+                return null;
             }
 
-            return null;
+            if (zone_Growing is { allowCut: false })
+            {
+                return null;
+            }
+
+            return !PlantUtility.PawnWillingToCutPlant_Job(thing3, pawn)
+                ? null
+                : JobMaker.MakeJob(JobDefOf.CutPlant, thing3);
         }
 
         if (!wantedPlantDef.CanEverPlantAt(c, pawn.Map) || !PlantUtility.GrowthSeasonNow(c, pawn.Map) ||

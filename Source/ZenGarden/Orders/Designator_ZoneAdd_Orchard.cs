@@ -59,11 +59,6 @@ public class Designator_ZoneAdd_Orchard : Designator_ZoneAdd
             return false;
         }
 
-        if (Map.fertilityGrid.FertilityAt(c) < ThingDefOf.Plant_Potato.plant.fertilityMin)
-        {
-            return false;
-        }
-
-        return true;
+        return !(Map.fertilityGrid.FertilityAt(c) < ThingDefOf.Plant_Potato.plant.fertilityMin);
     }
 }

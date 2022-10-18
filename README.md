@@ -9,16 +9,14 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1554147049
 
 - Reported issues on mantrasongs versions mod-page should be fixed.
 
+There is also the add-on mod https://steamcommunity.com/sharedfiles/filedetails/?id=2141107008]Zen Garden Plus by velcroboy333 that lets you use the plants in this mod in different recipes for food and beverages.
+
 ![Image](https://i.imgur.com/pufA0kM.png)
 
 	
 ![Image](https://i.imgur.com/Z4GOv8H.png)
 
 This mod adds various zen and rock garden themed decorations. Researching stonecutting unlocks everything.
-
-# Workshop ID:
-
-1221867010
 
 # Items Added:
 
@@ -53,8 +51,6 @@ This mod adds various zen and rock garden themed decorations. Researching stonec
 **Rough Gravel:** Cheaper gravel flooring that cannot be raked. May be found in the world as paths
 **Gravel Floor:** A simple gravel floor that can be raked into vertical, horizontal, or curved patterns - or left unraked
 
-
-
 # Save Compatability
 
 This mod can be added to existing saves.
@@ -69,9 +65,14 @@ Always back up your saves before adding new mods as there is always the possibil
 **Survivalist's Additions:** Saguaro Cactus can be grown in an Orchard Zone to produce Prickly Pear; Cherries, Persimmon, and Crabapple can be used to make Vinegar 
 **SeedsPlease:** Seeds added for orchard trees 
 
-# Older Versions and Update Notes
+[hr]
+# mantrasongs description
 
-All versions of this mod can be found on my https://github.com/cuproPanda/Zen-Garden/releases]GitHub. Each release has info on what has changed from the previous release.
+Adds decorative garden stuff.
+
+ORIGINAL AUTHOR: cuproPanda
+
+This is a 1.0 port of Zen Garden by cuproPanda. I am NOT the creator, all credit is attributed to cuproPanda. Please report any issues as they come up.
 
 ![Image](https://i.imgur.com/PwoNOj4.png)
 
@@ -83,5 +84,6 @@ All versions of this mod can be found on my https://github.com/cuproPanda/Zen-Ga
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
+
 
 

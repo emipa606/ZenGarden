@@ -31,10 +31,7 @@ public class JobDriver_PlantsHarvestSecondary : JobDriver_PlantWork
         cut.tickAction = delegate
         {
             var actor = cut.actor;
-            if (actor.skills != null)
-            {
-                actor.skills.Learn(SkillDefOf.Plants, 0.11f);
-            }
+            actor.skills?.Learn(SkillDefOf.Plants, 0.11f);
 
             workDone += WorkDonePerTick(actor, Plant);
             if (workDone < Plant.def.plant.harvestWork)

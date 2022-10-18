@@ -81,12 +81,7 @@ public class WorkGiver_GrowerHarvestSecondary : WorkGiver_Grower
             return false;
         }
 
-        if (!pawn.CanReserve(plantWithSecondary, 1, -1, null, forced))
-        {
-            return false;
-        }
-
-        return HarvestableLocation(plantWithSecondary, c);
+        return pawn.CanReserve(plantWithSecondary, 1, -1, null, forced) && HarvestableLocation(plantWithSecondary, c);
     }
 
     public override bool ShouldSkip(Pawn pawn, bool forced = false)

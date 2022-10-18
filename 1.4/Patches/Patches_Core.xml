@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/DesignationCategoryDef[defName="Orders"]/specialDesignatorClasses</xpath>
+    <value>
+      <li>ZenGarden.Designator_PlantsHarvestSecondary</li>
+    </value>
+    <order>Append</order>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses</xpath>
+    <value>
+      <li>ZenGarden.Designator_ZoneAdd_Orchard</li>
+    </value>
+    <order>Append</order>
+  </Operation>
+</Patch>

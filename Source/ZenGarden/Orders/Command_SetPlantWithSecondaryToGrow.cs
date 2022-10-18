@@ -100,13 +100,8 @@ public class Command_SetPlantWithSecondaryToGrow : Command
 
     private static bool IsValidPlant(ThingDef plant)
     {
-        if (plant.GetModExtension<SecondaryResource>().forbiddenGrowBiomes.NullOrEmpty() || !plant
-                .GetModExtension<SecondaryResource>().forbiddenGrowBiomes.Contains(Find.CurrentMap.Biome))
-        {
-            return true;
-        }
-
-        return false;
+        return plant.GetModExtension<SecondaryResource>().forbiddenGrowBiomes.NullOrEmpty() || !plant
+            .GetModExtension<SecondaryResource>().forbiddenGrowBiomes.Contains(Find.CurrentMap.Biome);
     }
 
 

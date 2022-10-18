@@ -24,15 +24,12 @@ internal class JoyGiver_SitAtScenicBench : JoyGiver
             b.def == ThingDef.Named("ZEN_ScenicBench") && b.Faction == Faction.OfPlayer && !b.IsForbidden(pawn)
             && (allowedOutside || b.Position.Roofed(b.Map)) &&
             pawn.CanReserveAndReach(b, PathEndMode.Touch, Danger.None));
-        if (!bench.TryRandomElementByWeight(delegate(Thing x)
-            {
-                var lengthHorizontal = (x.Position - pawn.Position).LengthHorizontal;
-                return Mathf.Max(150f - lengthHorizontal, 5f);
-            }, out var t))
+        return !bench.TryRandomElementByWeight(delegate(Thing x)
         {
-            return null;
-        }
-
-        return new Job(def.jobDef, t);
+            var lengthHorizontal = (x.Position - pawn.Position).LengthHorizontal;
+            return Mathf.Max(150f - lengthHorizontal, 5f);
+        }, out var t)
+            ? null
+            : new Job(def.jobDef, t);
     }
 }
