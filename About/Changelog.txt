@@ -1,5 +1,8 @@
 # Changelog for ZenGarden
 
+1.4.2 - The border pond will now use Custom6 link-flag when Dubs Bad Hygiene is loaded to avoid linking with the pipes in that mod.
+
+
 1.4.1 - Mod updated for 1.4 and passed autotests.
 Used DeepL to update translations for ChineseSimplified, French, German, Russian
 
