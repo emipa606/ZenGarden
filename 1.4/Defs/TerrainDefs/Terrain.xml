@@ -1,12 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <TerrainDef Name="GravelFloorBase" Abstract="True">
-    <affordances>
-      <li>Light</li>
-      <li>Medium</li>
-      <li>Heavy</li>
-    </affordances>
-    <layerable>true</layerable>
+  <TerrainDef Name="GravelFloorBase" ParentName="FloorBase" Abstract="True">
     <designationCategory>ZEN_Decoration</designationCategory>
     <edgeType>FadeRough</edgeType>
     <avoidWander>true</avoidWander>
@@ -14,7 +8,6 @@
     <holdSnow>true</holdSnow>
     <!-- The stone is broken into gravel, so it shouldn't yield usable blocks -->
     <resourcesFractionWhenDeconstructed>0</resourcesFractionWhenDeconstructed>
-    <fertility>0</fertility>
     <filthAcceptanceMask>
       <li>Unnatural</li>
     </filthAcceptanceMask>
@@ -33,7 +26,7 @@
     <renderPrecedence>221</renderPrecedence>
     <pathCost>1</pathCost>
     <scatterType>Rocky</scatterType>
-    <tags>
+    <tags Inherit="False">
       <li>Road</li>
     </tags>
     <designatorDropdown>ZEN_Rough</designatorDropdown>
@@ -145,5 +138,8 @@
     <costList>
       <Jade>4</Jade>
     </costList>
+    <tags>
+      <li>FineFloor</li>
+    </tags>
   </TerrainDef>
 </Defs>

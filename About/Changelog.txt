@@ -1,5 +1,8 @@
 # Changelog for ZenGarden
 
+1.4.3 - Gravel inherits from vanilla class instead. Unraked gravel will count as floor, unraked jade gravel as fine floor
+
+
 1.4.2 - The border pond will now use Custom6 link-flag when Dubs Bad Hygiene is loaded to avoid linking with the pipes in that mod.
 
 
