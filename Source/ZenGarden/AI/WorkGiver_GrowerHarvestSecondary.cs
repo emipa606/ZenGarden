@@ -35,7 +35,7 @@ public class WorkGiver_GrowerHarvestSecondary : WorkGiver_Grower
 
             if (orchardZone.cells.Count == 0)
             {
-                Log.ErrorOnce("Orchard zone has 0 cells: " + orchardZone, -563487);
+                Log.ErrorOnce($"Orchard zone has 0 cells: {orchardZone}", -563487);
                 continue;
             }
 
@@ -66,7 +66,7 @@ public class WorkGiver_GrowerHarvestSecondary : WorkGiver_Grower
             return false;
         }
 
-        if (!(plant is PlantWithSecondary plantWithSecondary))
+        if (plant is not PlantWithSecondary plantWithSecondary)
         {
             return false;
         }

@@ -79,30 +79,15 @@ public class PlantWithSecondary : Plant
                 return true;
             }
 
-            if (secondaryDef.limitedGrowSeasons.Contains(GenLocalDate.Season(Map)))
-            {
-                return true;
-            }
-
-            return false;
+            return secondaryDef.limitedGrowSeasons.Contains(GenLocalDate.Season(Map));
         }
     }
 
     private string Sec_GrowthPercentString => (sec_GrowthInt + 0.0001f).ToStringPercent();
 
     // Adjusted growth based on parent's growth, preventing the secondary item from being harvestable before the parent has matured enough
-    private float AdjustedGrowth
-    {
-        get
-        {
-            if (secondaryDef == null)
-            {
-                return 0f;
-            }
-
-            return Mathf.Lerp(0f, 1f, growthInt / secondaryDef.parentMinGrowth);
-        }
-    }
+    private float AdjustedGrowth =>
+        secondaryDef == null ? 0f : Mathf.Lerp(0f, 1f, growthInt / secondaryDef.parentMinGrowth);
 
     // Override the graphic, allowing this plant to potentially bloom
     public override Graphic Graphic
@@ -125,7 +110,7 @@ public class PlantWithSecondary : Plant
         {
             var stringBuilder = new StringBuilder();
             stringBuilder.Append(base.LabelMouseover);
-            stringBuilder.Append(" - " + thingLabel + " (" + "PercentGrowth".Translate(Sec_GrowthPercentString
+            stringBuilder.Append($" - {thingLabel} (" + "PercentGrowth".Translate(Sec_GrowthPercentString
             ));
             stringBuilder.Append(")");
             return stringBuilder.ToString().TrimEndNewlines();
@@ -164,8 +149,8 @@ public class PlantWithSecondary : Plant
         }
 
         yield return new StatDrawEntry(StatCategoryDefOf.PawnMisc,
-            thingLabel + " " + "GrowingTime".Translate().ToLower(),
-            secondaryDef.growDays.ToString("0.##") + " " + "Days".Translate(), "", 1);
+            $"{thingLabel} " + "GrowingTime".Translate().ToLower(),
+            $"{secondaryDef.growDays:0.##} " + "Days".Translate(), "", 1);
         yield return new StatDrawEntry(StatCategoryDefOf.PawnMisc, $"{thingLabel} {Static.DisplayStat_MinPlantGrowth}",
             secondaryDef.parentMinGrowth.ToStringPercent(), Static.DisplayStat_MinGrowthReport, 1);
         yield return new StatDrawEntry(StatCategoryDefOf.PawnMisc,
@@ -257,7 +242,7 @@ public class PlantWithSecondary : Plant
             if (gfxUpdate != Sec_HarvestableNow && bloomingGraphic != null && Sec_HarvestableNow &&
                 !LeaflessNow)
             {
-                Map.mapDrawer.MapMeshDirty(Position, MapMeshFlag.Things);
+                Map.mapDrawer.MapMeshDirty(Position, MapMeshFlagDefOf.Things);
             }
         }
         // If this isn't the right season, restart growth
@@ -306,7 +291,7 @@ public class PlantWithSecondary : Plant
         // If there is a blooming graphic, dirty the map mesh here to reset the graphic
         if (bloomingGraphic != null)
         {
-            Map.mapDrawer.MapMeshDirty(Position, MapMeshFlag.Things);
+            Map.mapDrawer.MapMeshDirty(Position, MapMeshFlagDefOf.Things);
         }
 
         return secondary;
@@ -333,14 +318,14 @@ public class PlantWithSecondary : Plant
         // Add button for insta-growing the secondary thing
         var DevGrow = new Command_Action
         {
-            defaultLabel = "Debug: Grow " + thingLabel,
+            defaultLabel = $"Debug: Grow {thingLabel}",
             activateSound = SoundDefOf.Click,
             action = () =>
             {
                 sec_GrowthInt = 1f;
                 if (bloomingGraphic != null)
                 {
-                    Map.mapDrawer.MapMeshDirty(Position, MapMeshFlag.Things);
+                    Map.mapDrawer.MapMeshDirty(Position, MapMeshFlagDefOf.Things);
                 }
             }
         };
@@ -384,17 +369,17 @@ public class PlantWithSecondary : Plant
             // Append secondary growth info
             if (Sec_HarvestableNow)
             {
-                stringBuilder.AppendLine(thingLabel + " " + "ReadyToHarvest".Translate().ToLower());
+                stringBuilder.AppendLine($"{thingLabel} " + "ReadyToHarvest".Translate().ToLower());
             }
             else
             {
                 if (GrowsThisSeason)
                 {
-                    stringBuilder.AppendLine(thingLabel + " " + "PercentGrowth".Translate(Sec_GrowthPercentString));
+                    stringBuilder.AppendLine($"{thingLabel} " + "PercentGrowth".Translate(Sec_GrowthPercentString));
                 }
                 else
                 {
-                    stringBuilder.AppendLine(thingLabel + " " + Static.ReportBadSeason);
+                    stringBuilder.AppendLine($"{thingLabel} {Static.ReportBadSeason}");
                 }
             }
 
@@ -434,17 +419,17 @@ public class PlantWithSecondary : Plant
             // Append secondary growth info
             if (Sec_HarvestableNow)
             {
-                stringBuilder.AppendLine(thingLabel + " " + "ReadyToHarvest".Translate().ToLower());
+                stringBuilder.AppendLine($"{thingLabel} " + "ReadyToHarvest".Translate().ToLower());
             }
             else
             {
                 if (GrowsThisSeason)
                 {
-                    stringBuilder.AppendLine(thingLabel + " " + "PercentGrowth".Translate(Sec_GrowthPercentString));
+                    stringBuilder.AppendLine($"{thingLabel} " + "PercentGrowth".Translate(Sec_GrowthPercentString));
                 }
                 else
                 {
-                    stringBuilder.AppendLine(thingLabel + " " + Static.ReportBadSeason);
+                    stringBuilder.AppendLine($"{thingLabel} {Static.ReportBadSeason}");
                 }
             }
         }

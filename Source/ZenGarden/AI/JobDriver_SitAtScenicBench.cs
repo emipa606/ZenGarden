@@ -87,7 +87,7 @@ internal class JobDriver_SitAtScenicBench : JobDriver
 
     private float AverageBeautyPerceptible(IntVec3 root, Map map)
     {
-        var tempCountedThings = new List<Thing>();
+        var tempCountedThings = new HashSet<Thing>();
         var beauty = 0f;
         var cells = 0;
         BeautyUtility.FillBeautyRelevantCells(root, map);

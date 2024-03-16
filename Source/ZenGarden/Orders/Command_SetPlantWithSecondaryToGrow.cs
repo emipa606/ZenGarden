@@ -54,7 +54,7 @@ public class Command_SetPlantWithSecondaryToGrow : Command
         var list = new List<FloatMenuOption>();
         if (settables == null)
         {
-            settables = new List<IPlantToGrowSettable>();
+            settables = [];
         }
 
         if (!settables.Contains(settable))
@@ -74,17 +74,12 @@ public class Command_SetPlantWithSecondaryToGrow : Command
             if (current.plant.sowMinSkill > 0)
             {
                 var text2 = text;
-                text = string.Concat(text2, " (", "MinSkill".Translate(), ": ", current.plant.sowMinSkill, ")");
-            }
-
-            bool ExtraPartOnGui(Rect rect)
-            {
-                return Widgets.InfoCardButton(rect.x + 5f, rect.y + ((rect.height - 24f) / 2f), localPlantDef);
+                text = $"{text2} ({"MinSkill".Translate()}: {current.plant.sowMinSkill})";
             }
 
             list.Add(new FloatMenuOption(text, delegate
             {
-                var unused = localPlantDef.defName;
+                _ = localPlantDef.defName;
                 foreach (var growSettable in settables)
                 {
                     growSettable.SetPlantDefToGrow(localPlantDef);
@@ -92,6 +87,12 @@ public class Command_SetPlantWithSecondaryToGrow : Command
 
                 WarnAsAppropriate(localPlantDef);
             }, MenuOptionPriority.Default, null, null, 29f, ExtraPartOnGui));
+            continue;
+
+            bool ExtraPartOnGui(Rect rect)
+            {
+                return Widgets.InfoCardButton(rect.x + 5f, rect.y + ((rect.height - 24f) / 2f), localPlantDef);
+            }
         }
 
         Find.WindowStack.Add(new FloatMenu(list));
@@ -109,7 +110,7 @@ public class Command_SetPlantWithSecondaryToGrow : Command
     {
         if (settables == null)
         {
-            settables = new List<IPlantToGrowSettable>();
+            settables = [];
         }
 
         settables.Add(((Command_SetPlantWithSecondaryToGrow)other).settable);

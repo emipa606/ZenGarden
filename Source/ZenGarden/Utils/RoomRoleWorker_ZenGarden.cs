@@ -5,8 +5,8 @@ namespace ZenGarden;
 
 public class RoomRoleWorker_ZenGarden : RoomRoleWorker
 {
-    private static readonly List<string> ValidZenBuildings = new List<string>
-        { "ZEN_BorderPath", "ZEN_BorderPond", "ZEN_GravelCurve", "ZEN_GravelHoriz", "ZEN_GravelVert", "ZEN_Hedge" };
+    private static readonly List<string> ValidZenBuildings =
+        ["ZEN_BorderPath", "ZEN_BorderPond", "ZEN_GravelCurve", "ZEN_GravelHoriz", "ZEN_GravelVert", "ZEN_Hedge"];
 
     public override float GetScore(Room room)
     {

@@ -33,7 +33,7 @@ public class Building_Fountain : Building
         AnimFrames = new Graphic[FrameCount];
         for (var i = 0; i < FrameCount; i++)
         {
-            AnimFrames[i] = GraphicDatabase.Get<Graphic_Single>("Cupro/Anim/FountainWater" + (i + 1),
+            AnimFrames[i] = GraphicDatabase.Get<Graphic_Single>($"Cupro/Anim/FountainWater{i + 1}",
                 ShaderDatabase.Transparent, def.graphicData.drawSize, new Color(1f, 1f, 1f, 0.65f));
         }
 
@@ -65,10 +65,9 @@ public class Building_Fountain : Building
         currFrame = AnimFrames[frameLerp];
     }
 
-
-    public override void Draw()
+    protected override void DrawAt(Vector3 drawLoc, bool flip = false)
     {
-        base.Draw();
+        base.DrawAt(drawLoc, flip);
         if (currFrame == null || animOff == null)
         {
             return;
@@ -76,8 +75,8 @@ public class Building_Fountain : Building
 
         var matrix = default(Matrix4x4);
         var s = new Vector3(def.graphicData.drawSize.x, 9f, def.graphicData.drawSize.y); //Size and altitude
-        var x = new Vector3(0f, 0f, 0f); // This is a offset for drawing position
-        matrix.SetTRS(DrawPos + x + Altitudes.AltIncVect, Rotation.AsQuat, s);
+        var x = new Vector3(0f, 0f, 0f); // This is an offset for drawing position
+        matrix.SetTRS(drawLoc + x + Altitudes.AltIncVect, Rotation.AsQuat, s);
         if (powerComp.PowerOn && AnimFrames.Length > 0)
         {
             Graphics.DrawMesh(MeshPool.plane10, matrix, currFrame.MatAt(Rotation), 0);

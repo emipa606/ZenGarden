@@ -50,7 +50,7 @@ public class JobDriver_PlantsSowSecondary : JobDriver
                 var plant = Plant;
                 if (plant.LifeStage != PlantLifeStage.Sowing)
                 {
-                    Log.Error(this + " getting sowing work while not in Sowing life stage.");
+                    Log.Error($"{this} getting sowing work while not in Sowing life stage.");
                 }
 
                 sowWorkDone += statValue;
@@ -61,7 +61,7 @@ public class JobDriver_PlantsSowSecondary : JobDriver
 
                 plant.Growth = 0.05f;
                 plant.Sec_Growth = 0.05f;
-                Map.mapDrawer.MapMeshDirty(plant.Position, MapMeshFlag.Things);
+                Map.mapDrawer.MapMeshDirty(plant.Position, MapMeshFlagDefOf.Things);
                 actor.records.Increment(RecordDefOf.PlantsSown);
                 ReadyForNextToil();
             },

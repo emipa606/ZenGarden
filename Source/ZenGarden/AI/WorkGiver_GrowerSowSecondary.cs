@@ -33,7 +33,7 @@ public class WorkGiver_GrowerSowSecondary : WorkGiver_Scanner
 
             if (orchardZone.cells.Count == 0)
             {
-                Log.ErrorOnce("Orchard zone has 0 cells: " + orchardZone, -563487);
+                Log.ErrorOnce($"Orchard zone has 0 cells: {orchardZone}", -563487);
                 continue;
             }
 

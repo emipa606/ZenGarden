@@ -17,7 +17,7 @@ public class Designator_PlantsHarvestSecondary : Designator
         soundDragSustain = SoundDefOf.Designate_DragStandard;
         soundDragChanged = SoundDefOf.Designate_DragStandard_Changed;
         useMouseIcon = true;
-        soundSucceeded = SoundDefOf.Designate_Harvest;
+        soundSucceeded = SoundDefOf.Designate_HarvestPlants;
         designationDef = DefDatabase<DesignationDef>.GetNamed("ZEN_Designator_PlantsHarvestSecondary");
     }
 
@@ -33,7 +33,7 @@ public class Designator_PlantsHarvestSecondary : Designator
         }
 
         // If the thing doesn't have a matching PlantWithSecondaryDef
-        if (!(t is PlantWithSecondary plant))
+        if (t is not PlantWithSecondary plant)
         {
             return "ZEN_MustDesignatePlantsWithSecondary".Translate();
         }

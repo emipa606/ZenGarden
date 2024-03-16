@@ -14,7 +14,7 @@ internal class JoyGiver_SitAtScenicBench : JoyGiver
         var allowedOutside = JoyUtility.EnjoyableOutsideNow(pawn);
 
         // If the pawn doesn't have the required needs for some reason, fail
-        if (pawn.needs == null || pawn.needs.joy == null || pawn.needs.mood == null || pawn.needs.mood.thoughts == null)
+        if (pawn.needs?.joy == null || pawn.needs.mood?.thoughts == null)
         {
             return null;
         }

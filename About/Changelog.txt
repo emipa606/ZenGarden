@@ -1,5 +1,8 @@
 # Changelog for ZenGarden
 
+1.5.0 - Mod updated for 1.5 and passed autotests
+
+
 1.4.3 - Gravel inherits from vanilla class instead. Unraked gravel will count as floor, unraked jade gravel as fine floor
 
 

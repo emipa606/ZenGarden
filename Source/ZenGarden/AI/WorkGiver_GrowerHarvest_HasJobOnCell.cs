@@ -6,7 +6,7 @@ namespace ZenGarden;
 
 [HarmonyPatch(typeof(WorkGiver_GrowerHarvest))]
 [HarmonyPatch("HasJobOnCell")]
-[HarmonyPatch(new[] { typeof(Pawn), typeof(IntVec3) })]
+[HarmonyPatch([typeof(Pawn), typeof(IntVec3)])]
 public class WorkGiver_GrowerHarvest_HasJobOnCell
 {
     private static void Postfix(Pawn pawn, IntVec3 c, ref bool __result)

@@ -101,8 +101,8 @@ public class Zone_Orchard : Zone, IPlantToGrowSettable
         if (c.UsesOutdoorTemperature(Map))
         {
             var text2 = text;
-            text = string.Concat(text2, "OutdoorGrowingPeriod".Translate(), ": ",
-                Zone_Growing.GrowingQuadrumsDescription(Map.Tile), "\n");
+            text =
+                $"{text2}{"OutdoorGrowingPeriod".Translate()}: {Zone_Growing.GrowingQuadrumsDescription(Map.Tile)}\n";
         }
 
         if (PlantUtility.GrowthSeasonNow(c, Map))

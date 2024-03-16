@@ -31,7 +31,7 @@ public sealed class ZenGardenMod : Mod
 
     private void AssignPlants()
     {
-        secondaryPlants = new List<ThingDef>();
+        secondaryPlants = [];
         foreach (var plant in DefDatabase<ThingDef>.AllDefs)
         {
             if (plant.HasModExtension<SecondaryResource>())
