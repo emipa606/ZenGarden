@@ -474,6 +474,7 @@
     <altitudeLayer>Building</altitudeLayer>
     <passability>Impassable</passability>
     <fillPercent>0.75</fillPercent>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
     <statBases>
       <MaxHitPoints>500</MaxHitPoints>
       <Beauty>10</Beauty>
