@@ -1,5 +1,8 @@
 # Changelog for ZenGarden
 
+1.5.2 - All lighting should have advanced controls as well as a powerUpgrade
+
+
 1.5.1 - Fixed the error about the impassable pillar
 
 
