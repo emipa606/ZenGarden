@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: zen cherries -->
+  <ZEN_Cherries.label>zen cherries</ZEN_Cherries.label>
+  <!-- EN: Sweet and tart cherries. Nice to eat, even when raw. -->
+  <ZEN_Cherries.description>Sweet and tart cherries. Nice to eat, even when raw.</ZEN_Cherries.description>
+  <!-- EN: crabapple -->
+  <ZEN_Crabapples.label>crabapple</ZEN_Crabapples.label>
+  <!-- EN: A tiny variety of apple. The apples are very sour unless cooked. -->
+  <ZEN_Crabapples.description>A tiny variety of apple. The apples are very sour unless cooked.</ZEN_Crabapples.description>
+  <!-- EN: persimmon -->
+  <ZEN_Persimmon.label>persimmon</ZEN_Persimmon.label>
+  <!-- EN: A soft and sweet fruit. Nice to eat, even when raw. -->
+  <ZEN_Persimmon.description>A soft and sweet fruit. Nice to eat, even when raw.</ZEN_Persimmon.description>
+</LanguageData>

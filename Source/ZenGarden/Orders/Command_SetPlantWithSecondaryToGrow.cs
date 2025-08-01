@@ -52,10 +52,7 @@ public class Command_SetPlantWithSecondaryToGrow : Command
     {
         base.ProcessInput(ev);
         var list = new List<FloatMenuOption>();
-        if (settables == null)
-        {
-            settables = [];
-        }
+        settables ??= [];
 
         if (!settables.Contains(settable))
         {
@@ -108,10 +105,7 @@ public class Command_SetPlantWithSecondaryToGrow : Command
 
     public override bool InheritInteractionsFrom(Gizmo other)
     {
-        if (settables == null)
-        {
-            settables = [];
-        }
+        settables ??= [];
 
         settables.Add(((Command_SetPlantWithSecondaryToGrow)other).settable);
         return false;

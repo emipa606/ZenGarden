@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: harvesting TargetA. -->
+  <ZEN_PlantsHarvestSecondary.reportString>harvesting TargetA.</ZEN_PlantsHarvestSecondary.reportString>
+  <!-- EN: sowing TargetA. -->
+  <ZEN_PlantsSowSecondary.reportString>sowing TargetA.</ZEN_PlantsSowSecondary.reportString>
+  <!-- EN: Enjoying scenery. -->
+  <ZEN_SitAtScenicBench.reportString>Enjoying scenery.</ZEN_SitAtScenicBench.reportString>
+</LanguageData>

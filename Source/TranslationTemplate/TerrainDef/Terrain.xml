@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: unraked granite gravel -->
+  <ZEN_GravelNormalGranite.label>unraked granite gravel</ZEN_GravelNormalGranite.label>
+  <!-- EN: Gravel flooring made from small polished stones. Can be raked into various patterns. Slower to build, but is beautiful to look at. -->
+  <ZEN_GravelNormalGranite.description>Gravel flooring made from small polished stones. Can be raked into various patterns. Slower to build, but is beautiful to look at.</ZEN_GravelNormalGranite.description>
+  <!-- EN: unraked jade gravel -->
+  <ZEN_GravelNormalJade.label>unraked jade gravel</ZEN_GravelNormalJade.label>
+  <!-- EN: Gravel flooring made from small polished stones. Can be raked into various patterns. Slower to build, but is beautiful to look at. -->
+  <ZEN_GravelNormalJade.description>Gravel flooring made from small polished stones. Can be raked into various patterns. Slower to build, but is beautiful to look at.</ZEN_GravelNormalJade.description>
+  <!-- EN: unraked limestone gravel -->
+  <ZEN_GravelNormalLimestone.label>unraked limestone gravel</ZEN_GravelNormalLimestone.label>
+  <!-- EN: Gravel flooring made from small polished stones. Can be raked into various patterns. Slower to build, but is beautiful to look at. -->
+  <ZEN_GravelNormalLimestone.description>Gravel flooring made from small polished stones. Can be raked into various patterns. Slower to build, but is beautiful to look at.</ZEN_GravelNormalLimestone.description>
+  <!-- EN: unraked marble gravel -->
+  <ZEN_GravelNormalMarble.label>unraked marble gravel</ZEN_GravelNormalMarble.label>
+  <!-- EN: Gravel flooring made from small polished stones. Can be raked into various patterns. Slower to build, but is beautiful to look at. -->
+  <ZEN_GravelNormalMarble.description>Gravel flooring made from small polished stones. Can be raked into various patterns. Slower to build, but is beautiful to look at.</ZEN_GravelNormalMarble.description>
+  <!-- EN: unraked sandstone gravel -->
+  <ZEN_GravelNormalSandstone.label>unraked sandstone gravel</ZEN_GravelNormalSandstone.label>
+  <!-- EN: Gravel flooring made from small polished stones. Can be raked into various patterns. Slower to build, but is beautiful to look at. -->
+  <ZEN_GravelNormalSandstone.description>Gravel flooring made from small polished stones. Can be raked into various patterns. Slower to build, but is beautiful to look at.</ZEN_GravelNormalSandstone.description>
+  <!-- EN: unraked slate gravel -->
+  <ZEN_GravelNormalSlate.label>unraked slate gravel</ZEN_GravelNormalSlate.label>
+  <!-- EN: Gravel flooring made from small polished stones. Can be raked into various patterns. Slower to build, but is beautiful to look at. -->
+  <ZEN_GravelNormalSlate.description>Gravel flooring made from small polished stones. Can be raked into various patterns. Slower to build, but is beautiful to look at.</ZEN_GravelNormalSlate.description>
+  <!-- EN: rough granite gravel -->
+  <ZEN_GravelRoughGranite.label>rough granite gravel</ZEN_GravelRoughGranite.label>
+  <!-- EN: Rough gravel flooring made for paths. The gravel is too large to be raked. -->
+  <ZEN_GravelRoughGranite.description>Rough gravel flooring made for paths. The gravel is too large to be raked.</ZEN_GravelRoughGranite.description>
+  <!-- EN: rough limestone gravel -->
+  <ZEN_GravelRoughLimestone.label>rough limestone gravel</ZEN_GravelRoughLimestone.label>
+  <!-- EN: Rough gravel flooring made for paths. The gravel is too large to be raked. -->
+  <ZEN_GravelRoughLimestone.description>Rough gravel flooring made for paths. The gravel is too large to be raked.</ZEN_GravelRoughLimestone.description>
+  <!-- EN: rough marble gravel -->
+  <ZEN_GravelRoughMarble.label>rough marble gravel</ZEN_GravelRoughMarble.label>
+  <!-- EN: Rough gravel flooring made for paths. The gravel is too large to be raked. -->
+  <ZEN_GravelRoughMarble.description>Rough gravel flooring made for paths. The gravel is too large to be raked.</ZEN_GravelRoughMarble.description>
+  <!-- EN: rough sandstone gravel -->
+  <ZEN_GravelRoughSandstone.label>rough sandstone gravel</ZEN_GravelRoughSandstone.label>
+  <!-- EN: Rough gravel flooring made for paths. The gravel is too large to be raked. -->
+  <ZEN_GravelRoughSandstone.description>Rough gravel flooring made for paths. The gravel is too large to be raked.</ZEN_GravelRoughSandstone.description>
+  <!-- EN: rough slate gravel -->
+  <ZEN_GravelRoughSlate.label>rough slate gravel</ZEN_GravelRoughSlate.label>
+  <!-- EN: Rough gravel flooring made for paths. The gravel is too large to be raked. -->
+  <ZEN_GravelRoughSlate.description>Rough gravel flooring made for paths. The gravel is too large to be raked.</ZEN_GravelRoughSlate.description>
+</LanguageData>

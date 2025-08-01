@@ -105,7 +105,7 @@ public class Zone_Orchard : Zone, IPlantToGrowSettable
                 $"{text2}{"OutdoorGrowingPeriod".Translate()}: {Zone_Growing.GrowingQuadrumsDescription(Map.Tile)}\n";
         }
 
-        if (PlantUtility.GrowthSeasonNow(c, Map))
+        if (PlantUtility.GrowthSeasonNow(c, Map, plantDefToGrow))
         {
             text += "GrowSeasonHereNow".Translate();
         }

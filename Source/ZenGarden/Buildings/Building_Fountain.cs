@@ -8,12 +8,12 @@ namespace ZenGarden;
 [StaticConstructorOnStartup]
 public class Building_Fountain : Building
 {
-    public static Graphic[] AnimFrames;
+    private static Graphic[] AnimFrames;
     private readonly int FrameCount = 4;
-    public Graphic animOff;
+    private Graphic animOff;
     private Graphic currFrame;
     private int frameLerp;
-    public CompPowerTrader powerComp;
+    private CompPowerTrader powerComp;
 
     private TickManager tickMan;
 
@@ -27,7 +27,7 @@ public class Building_Fountain : Building
     }
 
 
-    public void GetGraphicArray()
+    private void GetGraphicArray()
     {
         //Creating frame array
         AnimFrames = new Graphic[FrameCount];
@@ -47,7 +47,7 @@ public class Building_Fountain : Building
     }
 
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
 

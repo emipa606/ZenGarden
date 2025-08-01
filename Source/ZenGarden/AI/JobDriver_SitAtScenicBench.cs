@@ -23,9 +23,6 @@ internal class JobDriver_SitAtScenicBench : JobDriver
         // Set fail conditions
         this.EndOnDespawnedOrNull(TargetIndex.A);
 
-        // Reference the tick manager so Find isn't constantly called
-        var tickMan = Find.TickManager;
-
         // Go to the bench
         yield return Toils_Goto.GotoCell(BenchInd, PathEndMode.OnCell);
 
@@ -35,16 +32,16 @@ internal class JobDriver_SitAtScenicBench : JobDriver
         {
             socialMode = RandomSocialMode.Normal,
             initAction = () => { surroundingBeauty = BeautyUtility.AverageBeautyPerceptible(pawn.Position, Map); },
-            tickAction = () =>
+            tickIntervalAction = delegate(int delta)
             {
-                pawn.needs.joy.GainJoy(joyJob.joyGainRate * 0.000144f, joyJob.joyKind);
-                pawn.needs.joy.GainJoy(Mathf.Min(Mathf.Max(surroundingBeauty / 2f, 0.3f), 2.5f) * 0.000144f,
+                pawn.needs.joy.GainJoy(joyJob.joyGainRate * 0.000144f * delta, joyJob.joyKind);
+                pawn.needs.joy.GainJoy(Mathf.Min(Mathf.Max(surroundingBeauty / 2f, 0.3f), 2.5f) * 0.000144f * delta,
                     joyJob.joyKind);
                 // Gain comfort from sitting on the bench
-                pawn.GainComfortFromCellIfPossible();
+                pawn.GainComfortFromCellIfPossible(delta);
 
                 // Occasionally look in a different direction, observing the surroundings
-                if (tickMan.TicksGame % 250 == 0)
+                if (pawn.IsHashIntervalTick(250, delta))
                 {
                     pawn.rotationTracker.FaceCell(pawn.Position.RandomAdjacentCellCardinal());
                 }

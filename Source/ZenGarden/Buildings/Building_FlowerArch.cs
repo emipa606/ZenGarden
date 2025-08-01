@@ -42,7 +42,7 @@ internal class Building_FlowerArch : Building
         }
     }
 
-    public float Temperature => !GenTemperature.TryGetTemperatureForCell(Position, Map, out var num) ? 1f : num;
+    private float Temperature => !GenTemperature.TryGetTemperatureForCell(Position, Map, out var num) ? 1f : num;
 
     private Season Season => GenLocalDate.Season(Map);
 }

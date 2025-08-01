@@ -2,6 +2,18 @@
   "Continued": true,
   "CanAdd": "0",
   "CanRemove": "2",
-  "PreviewVersion": "1.5",
-  "SocialImageSet": true
+  "PreviewVersion": "1.6",
+  "SocialImageSet": true,
+  "Patches": true,
+  "Defs": true,
+  "Assemblies": true,
+  "LinesOfCode": 63423,
+  "LinesOfXML": 55830,
+  "CodeBaseSize": 80,
+  "LastXmlCleaning": "2025-08-01T16:00:43.4833431+02:00",
+  "SearchTags": [
+    " wall",
+    " lanterns",
+    " rock garden"
+  ]
 }

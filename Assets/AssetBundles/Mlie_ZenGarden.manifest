@@ -1,0 +1,108 @@
+ManifestFileVersion: 0
+CRC: 188654520
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: d8acd374000f22ea23f536669b1d2ba9
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2612ac43db082a73502ee80f2eceb73f
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: d8acd374000f22ea23f536669b1d2ba9
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/FlowerArch/FlowerArch_Plain.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Anim/FountainWater1.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/UI/Designations/HarvestSecondary.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/ScenicBench/ScenicBench_north.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/GravelHoriz_MenuIcon.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Usable/Persimmon/Persimmon_a.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/ScenicBench/ScenicBench_northm.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/ScenicBench/ScenicBench_eastm.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/CrabappleTree_Normal/CrabappleTreeB.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/UI/Designations/ZoneCreate_Orchard.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Material/Seeds/SeedCherries/SeedCherries_b.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/BorderPondIcon.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/CrabappleTree_Blooming/CrabappleTreeBloomingA.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Terrain/GravelNorm.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/CrabappleTree_Leafless/CrabappleTreeLeaflessA.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/BorderPath.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Material/EbonyWood/EbonyWood_a.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/PersimmonTree_Blooming/PersimmonTreeBloomingA.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/CherryTree_Blooming/CherryTree_BloomingA.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Anim/FountainWater3.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/FlowerArch/FlowerArch_Vines.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/PersimmonTree_Blooming/PersimmonTreeBloomingB.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Usable/Persimmon/Persimmon_b.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/GravelVert.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Material/Seeds/SeedCrabapples/SeedCrabapples_a.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/FlowerArch/FlowerArch_Blooming.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/Hedge/HedgeAtlasBlueprint.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Material/WoodLog/WoodLog_a.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/BonboriFence_m.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/CherryTree_Normal/CherryTree_NormalA.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Andon_m.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/StackedRocks/StackedRocks_m.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/CherryTree_Normal/CherryTree_NormalB.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/FenceIcon.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/FlowerArch/FlowerArch_Frozen.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Usable/Cherries/Cherries_b.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Material/EbonyWood/EbonyWood_b.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Usable/Cherries/Cherries_a.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Material/CherryWood/CherryWood_a.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Fountain/Fountain_m.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Anim/FountainWater2.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Tachidoro.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Anim/FountainWater4.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/CrabappleTree_Blooming/CrabappleTreeBloomingB.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/BorderPond_m.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Tachidoro_m.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/CherryTree_Leafless/CherryTree_LeaflessB.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/BorderPond.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Terrain/GravelRough_MenuIcon.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/Hedge/HedgeAtlas.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/BorderPath_m.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Material/Seeds/SeedCherries/SeedCherries_a.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Usable/Crabapples/Crabapples_b.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/CherryTree_Leafless/CherryTree_LeaflessA.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/GravelCurve.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/FenceBlueprint.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Andon.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Material/Seeds/SeedNotAPumpkin/SeedNotAPumpkin_a.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/BonboriFence.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Anim/FountainWater0.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/BorderPathIcon.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/Fence_m.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Terrain/GravelRough.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/CherryTree_Blooming/CherryTree_BloomingB.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Usable/Crabapples/Crabapples_a.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/PersimmonTree_Normal/PersimmonTreeA.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/BorderPathBlueprint.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Material/CherryWood/CherryWood_b.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/StackedRocks/StackedRocks.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Material/Seeds/SeedCrabapples/SeedCrabapples_b.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/ScenicBench/ScenicBench_east.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Material/Seeds/SeedNotAPumpkin/SeedNotAPumpkin_b.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/Hedge/HedgeIcon.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/BorderPathPillar/BorderPathPillar_m.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/GravelCurve_MenuIcon.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Fountain/Fountain.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Item/Material/WoodLog/WoodLog_b.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/BonboriFenceIcon.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/FlowerArch/FlowerArch_MenuIcon.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Terrain/GravelNorm_MenuIcon.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/PersimmonTree_Normal/PersimmonTreeB.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/BorderPathPillar/BorderPathPillar.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/Fence.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Linked/BonboriFenceBlueprint.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/CrabappleTree_Leafless/CrabappleTreeLeaflessB.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/GravelVert_MenuIcon.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/CrabappleTree_Normal/CrabappleTreeA.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/Plant/Hedge.png
+- Assets/Data/Mlie.ZenGarden/Textures/Cupro/Object/GravelHoriz.png
+Dependencies: []

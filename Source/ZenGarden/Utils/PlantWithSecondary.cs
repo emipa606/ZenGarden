@@ -65,7 +65,7 @@ public class PlantWithSecondary : Plant
     }
 
     // If the growth is limited to specific seasons, return whether the current season is acceptable
-    public bool GrowsThisSeason
+    private bool GrowsThisSeason
     {
         get
         {
@@ -226,7 +226,7 @@ public class PlantWithSecondary : Plant
         // If the parent is able to grow, grow the secondary thing as well
         if (GrowsThisSeason)
         {
-            if (!PlantUtility.GrowthSeasonNow(Position, Map))
+            if (!PlantUtility.GrowthSeasonNow(Position, Map, def))
             {
                 return;
             }

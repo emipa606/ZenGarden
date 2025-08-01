@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: harvest secondary resources from plants -->
+  <ZEN_GrowerHarvestSecondary.label>harvest secondary resources from plants</ZEN_GrowerHarvestSecondary.label>
+  <!-- EN: harvesting -->
+  <ZEN_GrowerHarvestSecondary.gerund>harvesting</ZEN_GrowerHarvestSecondary.gerund>
+  <!-- EN: harvest -->
+  <ZEN_GrowerHarvestSecondary.verb>harvest</ZEN_GrowerHarvestSecondary.verb>
+  <!-- EN: sow orchard plants -->
+  <ZEN_GrowerSowSecondary.label>sow orchard plants</ZEN_GrowerSowSecondary.label>
+  <!-- EN: sowing -->
+  <ZEN_GrowerSowSecondary.gerund>sowing</ZEN_GrowerSowSecondary.gerund>
+  <!-- EN: sow -->
+  <ZEN_GrowerSowSecondary.verb>sow</ZEN_GrowerSowSecondary.verb>
+</LanguageData>

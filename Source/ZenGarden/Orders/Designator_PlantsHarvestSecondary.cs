@@ -21,8 +21,7 @@ public class Designator_PlantsHarvestSecondary : Designator
         designationDef = DefDatabase<DesignationDef>.GetNamed("ZEN_Designator_PlantsHarvestSecondary");
     }
 
-    public override int DraggableDimensions => 2;
-
+    public override DrawStyleCategoryDef DrawStyleCategory => DrawStyleCategoryDefOf.Orders;
 
     public override AcceptanceReport CanDesignateThing(Thing t)
     {

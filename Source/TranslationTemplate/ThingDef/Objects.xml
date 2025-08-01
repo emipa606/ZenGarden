@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: standing lantern -->
+  <ZEN_Andon.label>standing lantern</ZEN_Andon.label>
+  <!-- EN: A standing lantern made of cloth that has been stretched over a wooden frame. Perfect for lighting bedrooms. -->
+  <ZEN_Andon.description>A standing lantern made of cloth that has been stretched over a wooden frame. Perfect for lighting bedrooms.</ZEN_Andon.description>
+  <!-- EN: half wall (lantern) -->
+  <ZEN_BonboriFence.label>half wall (lantern)</ZEN_BonboriFence.label>
+  <!-- EN: A small wall with a powered lantern to line and light paths. Able to be climbed over. -->
+  <ZEN_BonboriFence.description>A small wall with a powered lantern to line and light paths. Able to be climbed over.</ZEN_BonboriFence.description>
+  <!-- EN: border path -->
+  <ZEN_BorderPath.label>border path</ZEN_BorderPath.label>
+  <!-- EN: A nice border for a walkway, path, or rock garden. -->
+  <ZEN_BorderPath.description>A nice border for a walkway, path, or rock garden.</ZEN_BorderPath.description>
+  <!-- EN: border pond -->
+  <ZEN_BorderPond.label>border pond</ZEN_BorderPond.label>
+  <!-- EN: A border path filled with a small amount of water. Very relaxing. -->
+  <ZEN_BorderPond.description>A border path filled with a small amount of water. Very relaxing.</ZEN_BorderPond.description>
+  <!-- EN: border path pillar -->
+  <ZEN_bpPillar.label>border path pillar</ZEN_bpPillar.label>
+  <!-- EN: An ornate pillar with an over-sized cap. Can be used to support roofs. -->
+  <ZEN_bpPillar.description>An ornate pillar with an over-sized cap. Can be used to support roofs.</ZEN_bpPillar.description>
+  <!-- EN: half wall -->
+  <ZEN_Fence.label>half wall</ZEN_Fence.label>
+  <!-- EN: A small wall to line paths. Able to be climbed over. -->
+  <ZEN_Fence.description>A small wall to line paths. Able to be climbed over.</ZEN_Fence.description>
+  <!-- EN: flower arch -->
+  <ZEN_FlowerArch.label>flower arch</ZEN_FlowerArch.label>
+  <!-- EN: A decorative arch for passing through. Also goes well with a marriage spot. Vines grow when the temperature permits, and they bloom in the spring and summer. -->
+  <ZEN_FlowerArch.description>A decorative arch for passing through. Also goes well with a marriage spot. Vines grow when the temperature permits, and they bloom in the spring and summer.</ZEN_FlowerArch.description>
+  <!-- EN: curved gravel -->
+  <ZEN_GravelCurve.label>curved gravel</ZEN_GravelCurve.label>
+  <!-- EN: Designate a colonist to rake the below gravel into a curved pattern. -->
+  <ZEN_GravelCurve.description>Designate a colonist to rake the below gravel into a curved pattern.</ZEN_GravelCurve.description>
+  <!-- EN: horizontal gravel -->
+  <ZEN_GravelHoriz.label>horizontal gravel</ZEN_GravelHoriz.label>
+  <!-- EN: Designate a colonist to rake the below gravel into a horizontal pattern. -->
+  <ZEN_GravelHoriz.description>Designate a colonist to rake the below gravel into a horizontal pattern.</ZEN_GravelHoriz.description>
+  <!-- EN: vertical gravel -->
+  <ZEN_GravelVert.label>vertical gravel</ZEN_GravelVert.label>
+  <!-- EN: Designate a colonist to rake the below gravel into a vertical pattern. -->
+  <ZEN_GravelVert.description>Designate a colonist to rake the below gravel into a vertical pattern.</ZEN_GravelVert.description>
+  <!-- EN: artificial hedge -->
+  <ZEN_Hedge.label>artificial hedge</ZEN_Hedge.label>
+  <!-- EN: An artificial shrubbery for lining paths or walkways. Does not prevent movement. -->
+  <ZEN_Hedge.description>An artificial shrubbery for lining paths or walkways. Does not prevent movement.</ZEN_Hedge.description>
+  <!-- EN: large fountain -->
+  <ZEN_LargeFountain.label>large fountain</ZEN_LargeFountain.label>
+  <!-- EN: A large decorative stone fountain. -->
+  <ZEN_LargeFountain.description>A large decorative stone fountain.</ZEN_LargeFountain.description>
+  <!-- EN: large stacked rocks -->
+  <ZEN_LargeStackedRocks.label>large stacked rocks</ZEN_LargeStackedRocks.label>
+  <!-- EN: Large rocks that are stacked on top of each other. Conveys a sense of balance. -->
+  <ZEN_LargeStackedRocks.description>Large rocks that are stacked on top of each other. Conveys a sense of balance.</ZEN_LargeStackedRocks.description>
+  <!-- EN: scenic bench -->
+  <ZEN_ScenicBench.label>scenic bench</ZEN_ScenicBench.label>
+  <!-- EN: A simple bench for colonists to sit at to observe the surrounding beauty. -->
+  <ZEN_ScenicBench.description>A simple bench for colonists to sit at to observe the surrounding beauty.</ZEN_ScenicBench.description>
+  <!-- EN: small fountain -->
+  <ZEN_SmallFountain.label>small fountain</ZEN_SmallFountain.label>
+  <!-- EN: A small decorative stone fountain. -->
+  <ZEN_SmallFountain.description>A small decorative stone fountain.</ZEN_SmallFountain.description>
+  <!-- EN: stacked rocks -->
+  <ZEN_StackedRocks.label>stacked rocks</ZEN_StackedRocks.label>
+  <!-- EN: Rocks that are stacked on top of each other. Conveys a sense of balance. -->
+  <ZEN_StackedRocks.description>Rocks that are stacked on top of each other. Conveys a sense of balance.</ZEN_StackedRocks.description>
+  <!-- EN: pedestal lantern -->
+  <ZEN_Tachidoro.label>pedestal lantern</ZEN_Tachidoro.label>
+  <!-- EN: A stone pedestal lantern for lighting outside areas. -->
+  <ZEN_Tachidoro.description>A stone pedestal lantern for lighting outside areas.</ZEN_Tachidoro.description>
+</LanguageData>

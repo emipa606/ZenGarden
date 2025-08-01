@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: cherry wood -->
+  <ZEN_CherryWood.label>cherry wood</ZEN_CherryWood.label>
+  <!-- EN: Wood from cherry trees. Useful for building structures, weapons, and even simple prosthetics. A raw stick of cherrywood can be used as a weapon in a pinch. -->
+  <ZEN_CherryWood.description>Wood from cherry trees. Useful for building structures, weapons, and even simple prosthetics. A raw stick of cherrywood can be used as a weapon in a pinch.</ZEN_CherryWood.description>
+  <!-- EN: cherrywood -->
+  <ZEN_CherryWood.stuffProps.stuffAdjective>cherrywood</ZEN_CherryWood.stuffProps.stuffAdjective>
+  <!-- EN: ebony wood -->
+  <ZEN_EbonyWood.label>ebony wood</ZEN_EbonyWood.label>
+  <!-- EN: Wood from persimmon trees. Ebony wood is easy to polish, and is often used in sculptures. A raw stick of ebony wood can be used as a weapon in a pinch. -->
+  <ZEN_EbonyWood.description>Wood from persimmon trees. Ebony wood is easy to polish, and is often used in sculptures. A raw stick of ebony wood can be used as a weapon in a pinch.</ZEN_EbonyWood.description>
+  <!-- EN: ebony -->
+  <ZEN_EbonyWood.stuffProps.stuffAdjective>ebony</ZEN_EbonyWood.stuffProps.stuffAdjective>
+</LanguageData>

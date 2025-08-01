@@ -10,7 +10,7 @@ public class JobDriver_PlantsHarvestSecondary : JobDriver_PlantWork
 {
     private float workDone;
 
-    protected new PlantWithSecondary Plant => (PlantWithSecondary)job.GetTarget(TargetIndex.A).Thing;
+    private new PlantWithSecondary Plant => (PlantWithSecondary)job.GetTarget(TargetIndex.A).Thing;
 
     protected override IEnumerable<Toil> MakeNewToils()
     {

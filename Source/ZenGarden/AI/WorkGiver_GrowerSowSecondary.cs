@@ -7,7 +7,7 @@ namespace ZenGarden;
 
 public class WorkGiver_GrowerSowSecondary : WorkGiver_Scanner
 {
-    protected static ThingDef wantedPlantDef;
+    private static ThingDef wantedPlantDef;
 
     public override PathEndMode PathEndMode => PathEndMode.ClosestTouch;
 
@@ -99,7 +99,7 @@ public class WorkGiver_GrowerSowSecondary : WorkGiver_Scanner
             return null;
         }
 
-        if (!PlantUtility.GrowthSeasonNow(c, pawn.Map))
+        if (!PlantUtility.GrowthSeasonNow(c, pawn.Map, wantedPlantDef))
         {
             return null;
         }
@@ -225,7 +225,7 @@ public class WorkGiver_GrowerSowSecondary : WorkGiver_Scanner
                 : JobMaker.MakeJob(JobDefOf.CutPlant, thing3);
         }
 
-        if (!wantedPlantDef.CanEverPlantAt(c, pawn.Map) || !PlantUtility.GrowthSeasonNow(c, pawn.Map) ||
+        if (!wantedPlantDef.CanEverPlantAt(c, pawn.Map) || !PlantUtility.GrowthSeasonNow(c, pawn.Map, wantedPlantDef) ||
             !pawn.CanReserve(c))
         {
             return null;

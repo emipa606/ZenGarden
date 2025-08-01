@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: didn't enjoy scenery -->
+  <ZEN_DidNotEnjoyScenery.stages.didnt_enjoy_scenery.label>didn't enjoy scenery</ZEN_DidNotEnjoyScenery.stages.didnt_enjoy_scenery.label>
+  <!-- EN: I had a moment to sit and relax, but the scenery just reminded me how ugly this place is. -->
+  <ZEN_DidNotEnjoyScenery.stages.didnt_enjoy_scenery.description>I had a moment to sit and relax, but the scenery just reminded me how ugly this place is.</ZEN_DidNotEnjoyScenery.stages.didnt_enjoy_scenery.description>
+  <!-- EN: enjoyed beautiful scenery -->
+  <ZEN_EnjoyedBeautifulScenery.stages.enjoyed_beautiful_scenery.label>enjoyed beautiful scenery</ZEN_EnjoyedBeautifulScenery.stages.enjoyed_beautiful_scenery.label>
+  <!-- EN: I had a moment to sit and relax while enjoying beautiful scenery. -->
+  <ZEN_EnjoyedBeautifulScenery.stages.enjoyed_beautiful_scenery.description>I had a moment to sit and relax while enjoying beautiful scenery.</ZEN_EnjoyedBeautifulScenery.stages.enjoyed_beautiful_scenery.description>
+  <!-- EN: enjoyed scenery -->
+  <ZEN_EnjoyedScenery.stages.enjoyed_scenery.label>enjoyed scenery</ZEN_EnjoyedScenery.stages.enjoyed_scenery.label>
+  <!-- EN: I had a moment to sit and relax while enjoying the scenery. -->
+  <ZEN_EnjoyedScenery.stages.enjoyed_scenery.description>I had a moment to sit and relax while enjoying the scenery.</ZEN_EnjoyedScenery.stages.enjoyed_scenery.description>
+</LanguageData>

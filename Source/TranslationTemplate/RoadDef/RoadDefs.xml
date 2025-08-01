@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: granite gravel path -->
+  <ZEN_GravelPathGranite.label>granite gravel path</ZEN_GravelPathGranite.label>
+  <!-- EN: limestone gravel path -->
+  <ZEN_GravelPathLimestone.label>limestone gravel path</ZEN_GravelPathLimestone.label>
+  <!-- EN: marble gravel path -->
+  <ZEN_GravelPathMarble.label>marble gravel path</ZEN_GravelPathMarble.label>
+  <!-- EN: sandstone gravel path -->
+  <ZEN_GravelPathSandstone.label>sandstone gravel path</ZEN_GravelPathSandstone.label>
+  <!-- EN: slate gravel path -->
+  <ZEN_GravelPathSlate.label>slate gravel path</ZEN_GravelPathSlate.label>
+</LanguageData>

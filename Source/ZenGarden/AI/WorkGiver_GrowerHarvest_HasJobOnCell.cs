@@ -4,9 +4,7 @@ using Verse;
 
 namespace ZenGarden;
 
-[HarmonyPatch(typeof(WorkGiver_GrowerHarvest))]
-[HarmonyPatch("HasJobOnCell")]
-[HarmonyPatch([typeof(Pawn), typeof(IntVec3)])]
+[HarmonyPatch(typeof(WorkGiver_GrowerHarvest), "HasJobOnCell", typeof(Pawn), typeof(IntVec3))]
 public class WorkGiver_GrowerHarvest_HasJobOnCell
 {
     private static void Postfix(Pawn pawn, IntVec3 c, ref bool __result)

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: dense grass -->
+  <ZEN_DenseGrass.label>dense grass</ZEN_DenseGrass.label>
+  <!-- EN: Densely-grown grass, for those who like having a lawn. Dense grass takes more effort to plant and requires decent soil. -->
+  <ZEN_DenseGrass.description>Densely-grown grass, for those who like having a lawn. Dense grass takes more effort to plant and requires decent soil.</ZEN_DenseGrass.description>
+  <!-- EN: zen cherry tree -->
+  <ZEN_PlantTreeCherry.label>zen cherry tree</ZEN_PlantTreeCherry.label>
+  <!-- EN: A vibrant and colorful tree often grown for decoration. Produces zen cherries in the spring and summer. Can also be chopped down for cherrywood. -->
+  <ZEN_PlantTreeCherry.description>A vibrant and colorful tree often grown for decoration. Produces zen cherries in the spring and summer. Can also be chopped down for cherrywood.</ZEN_PlantTreeCherry.description>
+  <!-- EN: crabapple tree -->
+  <ZEN_PlantTreeCrabapple.label>crabapple tree</ZEN_PlantTreeCrabapple.label>
+  <!-- EN: A colorful hardwood tree which grows small apples. Produces crabapples in the summer and fall. Can also be chopped down for wood. -->
+  <ZEN_PlantTreeCrabapple.description>A colorful hardwood tree which grows small apples. Produces crabapples in the summer and fall. Can also be chopped down for wood.</ZEN_PlantTreeCrabapple.description>
+  <!-- EN: persimmon tree -->
+  <ZEN_PlantTreePersimmon.label>persimmon tree</ZEN_PlantTreePersimmon.label>
+  <!-- EN: A hardwood tree well known for its delicious soft fruit and uniquely dark heartwood. Produces persimmons in the fall and winter. Can also be chopped down for ebony wood. -->
+  <ZEN_PlantTreePersimmon.description>A hardwood tree well known for its delicious soft fruit and uniquely dark heartwood. Produces persimmons in the fall and winter. Can also be chopped down for ebony wood.</ZEN_PlantTreePersimmon.description>
+  <!-- EN: tall hedge -->
+  <ZEN_TallHedge.label>tall hedge</ZEN_TallHedge.label>
+  <!-- EN: A tall shrubbery for lining paths or walkways. Does not prevent movement. -->
+  <ZEN_TallHedge.description>A tall shrubbery for lining paths or walkways. Does not prevent movement.</ZEN_TallHedge.description>
+</LanguageData>
