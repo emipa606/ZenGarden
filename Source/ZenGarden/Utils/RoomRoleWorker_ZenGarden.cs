@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace ZenGarden;
@@ -13,14 +14,14 @@ public class RoomRoleWorker_ZenGarden : RoomRoleWorker
         var num = 0;
         var containedAndAdjacentThings = room.ContainedAndAdjacentThings;
 
-        foreach (var thing in containedAndAdjacentThings)
+        foreach (var thingDef in containedAndAdjacentThings.Select(thing => thing.def))
         {
-            if (thing.def.category != ThingCategory.Building)
+            if (thingDef.category != ThingCategory.Building)
             {
                 continue;
             }
 
-            if (ValidZenBuildings.Contains(thing.def.defName))
+            if (ValidZenBuildings.Contains(thingDef.defName))
             {
                 num++;
             }

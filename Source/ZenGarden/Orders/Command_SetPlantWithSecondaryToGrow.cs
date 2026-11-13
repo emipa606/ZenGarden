@@ -134,7 +134,7 @@ public class Command_SetPlantWithSecondaryToGrow : Command
     }
 
 
-    private bool IsPlantAvailable(ThingDef plantDef)
+    private static bool IsPlantAvailable(ThingDef plantDef)
     {
         var sowResearchPrerequisites = plantDef.plant.sowResearchPrerequisites;
         if (sowResearchPrerequisites == null)

@@ -18,9 +18,6 @@ public class PlantWithSecondary : Plant
     // Growth of the secondary thing
     private float sec_GrowthInt = -1f;
 
-    // If there is currently a seed for SeedsPlease, and the mod is installed, list it.
-    //public ThingDef seedDef = null;
-
     // Def reference for the secondary thing
     private SecondaryResource secondaryDef;
 
@@ -176,13 +173,6 @@ public class PlantWithSecondary : Plant
         }
 
         secondaryDef = def.GetModExtension<SecondaryResource>();
-
-        // If a SeedsPlease seed exists, and SeedsPlease is installed, assign it
-        //string seed = secondaryDef.seedsPleaseSeedDef;
-        //if (!seed.NullOrEmpty() && DefDatabase<ThingDef>.GetNamed(seed, false) != null && ModsConfig.ActiveModsInLoadOrder.Any(m => m.Name == "SeedsPlease"))
-        //{
-        //    seedDef = DefDatabase<ThingDef>.GetNamed(seed);
-        //}
 
         harvestDesignation = Static.DesignationHarvestSecondary;
 

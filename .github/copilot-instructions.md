@@ -2,68 +2,123 @@
 
 ## Mod Overview and Purpose
 
-Zen Garden (Continued) is a delightful mod for RimWorld that adds a variety of zen and rock garden-themed decorations to enhance the aesthetic and ambiance of your colony. The mod is a continuation and update of cuproPanda's original work, with further updates by mantrasongs. Users can create peaceful and visually appealing spaces within their RimWorld colonies by researching stonecutting, which unlocks all the new additions.
+**Zen Garden (Continued)** is an update to the original **cuproPandas** mod, based on **mantrasongs**' updated version. The mod aims to address reported issues from the previous versions and introduces new features and decorations to enhance the gardening experience in the RimWorld game. 
+
+The mod adds various Zen and rock garden-themed decorations, such as unique wood types, fruits, trees, and ornamental objects. It includes an Orchard Zone for growing secondary resources and various gravel flooring options to improve aesthetics and functionality.
 
 ## Key Features and Systems
 
-- **New Resources**: 
-  - *Cherry Wood*: Pink-colored wood.
-  - *Ebony Wood*: Black-colored wood.
-  - *Zen Cherries*: Secondary resource from Zen Cherry Tree.
-  - *Persimmon*: Secondary resource from Persimmon Tree.
-  - *Crabapple*: Secondary resource from Crabapple Tree.
+- **New Wood Types**: Cherry Wood (pink colored) and Ebony Wood (black colored) are introduced.
+- **Secondary Resources**: Zen Cherries from the Zen Cherry Tree, Persimmons from the Persimmon Tree, and Crabapples from the Crabapple Tree.
+- **Decorative Objects**: A wide range of decorative items like Border Path, Border Pond, Stacked Rocks, Artificial Hedges, Flower Arch, Scenic Bench, Fountain, and more.
+- **Growing Zones**: Orchard Zone for harvesting secondary resources from trees.
+- **Gravel Floors**: Rough Gravel and Gravel Floor for creating decorative paths and flooring.
+- **Compatibility**: Works with other mods like Architect Sense, Kura's Extra Minerals, Cupro's Stones, Medieval Times, Survivalist's Additions, and SeedsPlease.
 
-- **New Objects**: 
-  - A variety of garden objects such as paths, ponds, hedges, walls, benches, fountains, and lanterns.
-  - Unique items like Scenic Benches and Flower Arches that react dynamically to their environment.
+## Coding Patterns and Conventions
 
-- **Orchard Zone**: 
-  - A special growing zone that focuses on harvesting secondary resources without cutting down the plants.
-
-- **Customizable Gravel Floor**: 
-  - Can be raked into various patterns to suit aesthetic needs.
-
-## C# Coding Patterns and Conventions
-
-### Classes and Methods
-
-- **Job Drivers**
-  - Classes such as `JobDriver_PlantsHarvestSecondary` and `JobDriver_SitAtScenicBench` extend from base job classes and handle specific tasks related to gardening and scenic benches.
-
-- **Work Givers**
-  - Distinct classes to manage plant sowing and harvesting through `WorkGiver_GrowerHarvestSecondary` and `WorkGiver_GrowerSowSecondary`, utilizing specific methods for plant locations and requirements.
-
-- **Designators and Zones**
-  - Specific classes such as `Designator_ZoneAdd_Orchard` are used for creating and managing new zones, in this case, the Orchard Zone.
-
-- **Buildings and Structures**
-  - Classes like `Building_Fountain` and `Building_FlowerArch` provide structural functionality and interaction in the game world.
-
-### General Conventions
-
-- Use PascalCase for class and method names.
-- Private methods should be concise and descriptive, e.g., `HarvestableLocation`.
-- Leverage base classes and inheritance to extend functionality while maintaining DRY principles.
+- **C# Files**: Located in the `Source\ZenGarden` directory.
+- **XML Files**: Located in the `1.7\Defs` directory.
+- **Harmony Patching**: Utilizes the Harmony library for patching existing RimWorld functionality.
+- **Naming Conventions**: C# classes follow PascalCase, while methods and properties follow camelCase.
+- **Comments**: Extensive comments are added to explain complex logic and important sections of the code.
 
 ## XML Integration
 
-- XML files define the properties and settings for new items, plants, and objects added by the mod.
-- XML schemas are leveraged to configure the appearance, interactions, and relationships of assets with the game environment.
-- Ensure that XML files are organized within the appropriate directories (`Defs` folder) for seamless integration.
+The mod uses XML files to define new game elements. These XML files are structured to fit the RimWorld modding API and are located in the `1.7\Defs` directory. Key XML files include:
+
+- **DesignationCategoryDefs.xml**: Defines new designation categories.
+- **TerrainDefs.xml**: Defines new terrain types.
+- **ThingDefs_Items.xml**: Defines new items and usable objects.
+
+Each XML file contains multiple `Def` entries, such as `DesignationCategoryDef`, `TerrainDef`, and `ThingDef`, which are used to register new game elements with RimWorld.
 
 ## Harmony Patching
 
-- Harmony is used to patch methods and extend or modify existing game functionalities without altering core game files.
-- Carefully construct patches for both `pre` and `post` method execution where behavior modifications are necessary.
-- Ensure patches are conflict-free by checking for existing patches or modifications in the community.
+Harmony patching is extensively used in the mod to modify existing RimWorld behavior. Key Harmony patches include:
+
+- **JoyGiver_SitAtScenicBench**: Modifies the `TryGiveJob` method to add a new joy giver for colonists to sit at scenic benches.
+- **JobDriver_SitAtScenicBench**: Modifies the `MakeNewToils` and `TryMakePreToilReservations` methods to enhance the job driver for sitting at scenic benches.
+- **WorkGiver_GrowerHarvest_HasJobOnCell**: Modifies the `Postfix` method to adjust the behavior of the grower harvest work giver.
 
 ## Suggestions for Copilot
 
-- Provide detailed function headers and comments to guide AI autocompletion toward generating more accurate code snippets.
-- Highlight specific conditional logic and method extensions where enhanced functionality is expected.
-- Create templates for commonly used patterns, such as job driver instructions, to expedite the development of new features.
+To effectively use GitHub Copilot for this mod:
 
-Overall, this mod emphasizes decoration and visual enhancement within the game, providing players with the tools to create uniquely styled gardens and outdoor areas, while integrating seamlessly into existing game mechanics through careful C# and XML development practices. Always remember to back up your game saves before installing new mods to avoid any potential issues.
+1. **Understand the Mod Structure**: Familiarize yourself with the C# and XML file structures and the Harmony patching mechanism.
+2. **Use Semantic Suggestions**: When working with XML files, Copilot can generate `Def` entries and their attributes based on existing patterns.
+3. **Modify Existing Code**: For C# files, Copilot can suggest modifications to existing methods, such as adding new logic or changing existing behavior.
+4. **Generate New Code**: Use Copilot to generate new classes and methods for adding new features or enhancing existing ones.
+5. **Review and Test**: Always review the generated code for accuracy and test it within the RimWorld modding environment to ensure compatibility and functionality.
+
+## Example Usage
+
+### Generating a New XML Def
+
+xml
+<!-- Example of a new ThingDef -->
+<ThingDef>
+    <defName>ZenGarden_FlowerArch</defName>
+    <label>Flower Arch</label>
+    <description>A decorative flower arch used for garden paths and wedding spots.</description>
+    <category>Building</category>
+    <thingClass>Building_FlowerArch</thingClass>
+    <statBases>
+        <Beauty>5</Beauty>
+    </statBases>
+</ThingDef>
 
 
-This `.github/copilot-instructions.md` file aims to guide developers using GitHub Copilot in understanding and enhancing the Zen Garden mod. It encapsulates mod specifics, coding practices, and integration strategies to ensure a coherent and enriching development experience.
+### Modifying an Existing C# Method
+
+csharp
+// Example of modifying an existing method in JoyGiver_SitAtScenicBench.cs
+public override Job TryGiveJob(Pawn pawn)
+{
+    // Existing logic
+    if (!pawn.Awake())
+        return null;
+
+    // Copilot suggested addition
+    if (pawn.needs.mood == null)
+        return null;
+
+    // Rest of the method
+}
+
+
+### Generating a New Harmony Patch
+
+csharp
+// Example of a new Harmony patch in WorkGiver_GrowerHarvest_HasJobOnCell.cs
+[HarmonyPatch(typeof(WorkGiver_GrowerHarvest_HasJobOnCell), "Postfix")]
+public static class WorkGiver_GrowerHarvest_HasJobOnCell_Patch
+{
+    public static void Postfix(ref bool __result, WorkGiver_GrowerHarvest_HasJobOnCell __instance, ref Pawn pawn, ref IntVec3 c)
+    {
+        // Copilot suggested addition
+        if (__result && pawn.Faction == Faction.OfPlayer)
+        {
+            __result = false;
+        }
+    }
+}
+
+
+By following these instructions and utilizing GitHub Copilot effectively, you can enhance the development process for the Zen Garden (Continued) mod and contribute to improving the gardening experience in RimWorld.
+
+## Project Solution Guidelines
+- Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
+- Use these in-solution XML files as the primary files for reference and modification.
+- The `.github/copilot-instructions.md` file is included in the solution under the `.github` solution folder, so it should be read/modified from within the solution instead of using paths outside the solution. Update this file once only, as it and the parent-path solution reference point to the same file in this workspace.
+- When making functional changes in this mod, ensure the documented features stay in sync with implementation; use the in-solution `.github` copy as the primary file.
+- In the solution is also a project called Assembly-CSharp, containing a read-only version of the decompiled game source, for reference and debugging purposes.
+- For any new documentation, update this copilot-instructions.md file rather than creating separate documentation files.
+
+
+## Hard rules (must follow)
+- Do NOT run commands that modify the repo (no git commit, git apply, dotnet format) unless explicitly asked.
+- Prefer minimal reads: read only the smallest code region needed (around the suspicious lines).
+- When mentioning SonarQube issues, automatically use the SonarQube MCP service to fetch and address issues instead of making inferred fixes without querying SonarQube first.
+- When mentioning the rimworld log, automatically use the Rimworld MCP service to fetch the log.
+

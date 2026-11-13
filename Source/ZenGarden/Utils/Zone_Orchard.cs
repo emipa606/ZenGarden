@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -97,7 +96,7 @@ public class Zone_Orchard : Zone, IPlantToGrowSettable
             return text;
         }
 
-        var c = Cells.First();
+        var c = Cells[0];
         if (c.UsesOutdoorTemperature(Map))
         {
             var text2 = text;

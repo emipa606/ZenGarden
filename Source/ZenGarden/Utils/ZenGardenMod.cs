@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Verse;
 
 namespace ZenGarden;
@@ -29,15 +30,12 @@ public sealed class ZenGardenMod : Mod
     }
 
 
-    private void AssignPlants()
+    private static void AssignPlants()
     {
         secondaryPlants = [];
-        foreach (var plant in DefDatabase<ThingDef>.AllDefs)
+        foreach (var plant in DefDatabase<ThingDef>.AllDefs.Where(plant => plant.HasModExtension<SecondaryResource>()))
         {
-            if (plant.HasModExtension<SecondaryResource>())
-            {
-                secondaryPlants.Add(plant);
-            }
+            secondaryPlants.Add(plant);
         }
     }
 }

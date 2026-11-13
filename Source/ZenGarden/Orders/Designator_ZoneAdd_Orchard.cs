@@ -10,6 +10,7 @@ public class Designator_ZoneAdd_Orchard : Designator_ZoneAdd
     public List<ResearchProjectDef> researchPrerequisites;
 
 
+    // ReSharper disable once MemberCanBeProtected.Global
     public Designator_ZoneAdd_Orchard()
     {
         zoneTypeToPlace = typeof(Zone_Orchard);

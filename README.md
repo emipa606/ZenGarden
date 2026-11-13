@@ -1,6 +1,6 @@
 # [Zen Garden (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2777931683)
 
-![Image](https://i.imgur.com/buuPQel.png)
+![Image](https://img.litet.net/logos/Info.png)
 
 Update of cuproPandas mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1221867010
@@ -11,9 +11,9 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1554147049
 
 There is also the add-on mod [Zen Garden Plus](https://steamcommunity.com/sharedfiles/filedetails/?id=2141107008) by velcroboy333 that lets you use the plants in this mod in different recipes for food and beverages.
 
-![Image](https://i.imgur.com/pufA0kM.png)
+![Image](https://img.litet.net/logos/Notice.png)
 	
-![Image](https://i.imgur.com/Z4GOv8H.png)
+![Image](https://img.litet.net/logos/OriginalDescription.png)
 
 This mod adds various zen and rock garden themed decorations. Researching stonecutting unlocks everything.
 
@@ -73,13 +73,13 @@ ORIGINAL AUTHOR: cuproPanda
 
 This is a 1.0 port of Zen Garden by cuproPanda. I am NOT the creator, all credit is attributed to cuproPanda. Please report any issues as they come up.
 
-![Image](https://i.imgur.com/PwoNOj4.png)
+![Image](https://img.litet.net/logos/ReportingIssues.png)
 
 
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
+-  Always post your log using the [Log Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404)
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
@@ -87,4 +87,4 @@ This is a 1.0 port of Zen Garden by cuproPanda. I am NOT the creator, all credit
 
  
 
-[![Image](https://img.shields.io/github/v/release/emipa606/ZenGarden?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2777931683) | tags:  wall,  lanterns,  rock garden
+[![Image](https://img.shields.io/github/v/release/emipa606/ZenGarden?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2777931683) | lanterns, rock garden, wall

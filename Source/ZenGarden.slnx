@@ -6,4 +6,58 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="ZenGarden/ZenGarden.csproj" />
+  <Folder Name="/XML/1.7/Defs/Rooms/">
+    <File Path="../1.7/Defs/Rooms/RoomRoles.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/RoadDefs/">
+    <File Path="../1.7/Defs/RoadDefs/RoadDefs.xml" />
+    <File Path="../1.7/Defs/RoadDefs/RoadWorldLayerDefs.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Patches/">
+    <File Path="../1.7/Patches/Patches_Blueberries.xml" />
+    <File Path="../1.7/Patches/Patches_Core.xml" />
+    <File Path="../1.7/Patches/Patches_CoreOverrides.xml" />
+    <File Path="../1.7/Patches/Patches_DBH.xml" />
+    <File Path="../1.7/Patches/Patches_SRV.xml" />
+    <File Path="../1.7/Patches/Patches_VG.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/WorkGiverDefs/">
+    <File Path="../1.7/Defs/WorkGiverDefs/WorkGivers.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/JobDefs/">
+    <File Path="../1.7/Defs/JobDefs/Jobs.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/ThingDefs_Items/">
+    <File Path="../1.7/Defs/ThingDefs_Items/Materials.xml" />
+    <File Path="../1.7/Defs/ThingDefs_Items/Usables.xml" />
+  </Folder>
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/Messages.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/TerrainDefs/">
+    <File Path="../1.7/Defs/TerrainDefs/Terrain.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/ThingDefs/">
+    <File Path="../1.7/Defs/ThingDefs/Plants.xml" />
+    <File Path="../1.7/Defs/ThingDefs/Special.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/JoyGiverDefs/">
+    <File Path="../1.7/Defs/JoyGiverDefs/JoyGivers.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/ThingDefs_Objects/">
+    <File Path="../1.7/Defs/ThingDefs_Objects/Objects.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/ThoughtDefs/">
+    <File Path="../1.7/Defs/ThoughtDefs/Thoughts.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/Misc/">
+    <File Path="../1.7/Defs/Misc/DesignatorDropdownGroupDef.xml" />
+  </Folder>
+  <Folder Name="/XML/1.7/Defs/DesignationCategoryDefs/">
+    <File Path="../1.7/Defs/DesignationCategoryDefs/DesignationCategories.xml" />
+    <File Path="../1.7/Defs/DesignationCategoryDefs/Designations.xml" />
+  </Folder>
 </Solution>

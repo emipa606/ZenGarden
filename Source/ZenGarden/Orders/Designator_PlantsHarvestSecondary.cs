@@ -53,14 +53,14 @@ public class Designator_PlantsHarvestSecondary : Designator
     }
 
 
-    public override AcceptanceReport CanDesignateCell(IntVec3 c)
+    public override AcceptanceReport CanDesignateCell(IntVec3 loc)
     {
-        if (!c.InBounds(Map) || c.Fogged(Map))
+        if (!loc.InBounds(Map) || loc.Fogged(Map))
         {
             return false;
         }
 
-        if (c.GetPlant(Map) is not PlantWithSecondary plant)
+        if (loc.GetPlant(Map) is not PlantWithSecondary plant)
         {
             return "ZEN_MustDesignatePlantsWithSecondary".Translate();
         }

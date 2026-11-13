@@ -20,12 +20,7 @@ internal class PlaceWorker_OnRakeableGravel : PlaceWorker
             return false;
         }
 
-        if (terrain.tags == null)
-        {
-            return "ZEN_MustPlaceHeadOnUnrakedGravel".Translate();
-        }
-
-        if (!terrain.tags.Contains("UnrakedGravel"))
+        if (terrain.tags == null || !terrain.tags.Contains("UnrakedGravel"))
         {
             return "ZEN_MustPlaceHeadOnUnrakedGravel".Translate();
         }

@@ -18,12 +18,9 @@ public class WorkGiver_GrowerHarvestSecondary : WorkGiver_Grower
             .Where(p => p is PlantWithSecondary);
         var zonesList = pawn.Map.zoneManager.AllZones;
 
-        foreach (var plant in list)
+        foreach (var plant in list.Where(p => pawn.CanReach(p, PathEndMode.OnCell, pawn.NormalMaxDanger())))
         {
-            if (pawn.CanReach(plant, PathEndMode.OnCell, pawn.NormalMaxDanger()))
-            {
-                yield return plant.Position;
-            }
+            yield return plant.Position;
         }
 
         foreach (var zone in zonesList)
@@ -89,22 +86,22 @@ public class WorkGiver_GrowerHarvestSecondary : WorkGiver_Grower
         return pawn.GetLord() != null || base.ShouldSkip(pawn, forced);
     }
 
-    public override Job JobOnCell(Pawn pawn, IntVec3 c, bool forced = false)
+    public override Job JobOnCell(Pawn pawn, IntVec3 cell, bool forced = false)
     {
         var job = new Job(ZenDefOf.ZEN_PlantsHarvestSecondary);
         var map = pawn.Map;
-        var room = c.GetRoom(map);
+        var room = cell.GetRoom(map);
         var num = 0f;
         Plant plant;
-        if (c.GetRoom(map) == room && HasJobOnCell(pawn, c))
+        if (cell.GetRoom(map) == room && HasJobOnCell(pawn, cell))
         {
-            plant = c.GetPlant(map);
+            plant = cell.GetPlant(map);
             job.AddQueuedTarget(TargetIndex.A, plant);
         }
 
         for (var i = 0; i < 40; i++)
         {
-            var c2 = c + GenRadial.RadialPattern[i];
+            var c2 = cell + GenRadial.RadialPattern[i];
 
             if (!HasJobOnCell(pawn, c2))
             {
@@ -131,7 +128,7 @@ public class WorkGiver_GrowerHarvestSecondary : WorkGiver_Grower
     }
 
 
-    private bool HarvestableLocation(Plant plant, IntVec3 c)
+    private static bool HarvestableLocation(Plant plant, IntVec3 c)
     {
         if (c.GetZone(plant.Map) is Zone_Orchard)
         {

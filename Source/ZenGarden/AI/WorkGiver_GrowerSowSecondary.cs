@@ -12,7 +12,7 @@ public class WorkGiver_GrowerSowSecondary : WorkGiver_Scanner
     public override PathEndMode PathEndMode => PathEndMode.ClosestTouch;
 
 
-    private ThingDef CalculateWantedPlantDef(IntVec3 c, Map map)
+    private static ThingDef CalculateWantedPlantDef(IntVec3 c, Map map)
     {
         var plantToGrowSettable = c.GetPlantToGrowSettable(map);
         return plantToGrowSettable?.GetPlantDefToGrow();
@@ -64,7 +64,7 @@ public class WorkGiver_GrowerSowSecondary : WorkGiver_Scanner
     }
 
 
-    private bool ExtraRequirements(IPlantToGrowSettable settable, Pawn pawn)
+    private static bool ExtraRequirements(IPlantToGrowSettable settable, Pawn pawn)
     {
         if (!settable.CanAcceptSowNow())
         {
@@ -91,31 +91,31 @@ public class WorkGiver_GrowerSowSecondary : WorkGiver_Scanner
     }
 
     // Not synced with CanGiveJob
-    public override Job JobOnCell(Pawn pawn, IntVec3 c, bool forced = false)
+    public override Job JobOnCell(Pawn pawn, IntVec3 cell, bool forced = false)
     {
         var map = pawn.Map;
-        if (c.IsForbidden(pawn))
+        if (cell.IsForbidden(pawn))
         {
             return null;
         }
 
-        if (!PlantUtility.GrowthSeasonNow(c, pawn.Map, wantedPlantDef))
+        if (!PlantUtility.GrowthSeasonNow(cell, pawn.Map, wantedPlantDef))
         {
             return null;
         }
 
         if (wantedPlantDef == null)
         {
-            wantedPlantDef = CalculateWantedPlantDef(c, pawn.Map);
+            wantedPlantDef = CalculateWantedPlantDef(cell, pawn.Map);
             if (wantedPlantDef == null)
             {
                 return null;
             }
         }
 
-        var thingList = c.GetThingList(pawn.Map);
+        var thingList = cell.GetThingList(pawn.Map);
         var colonyPlant = false;
-        var zone_Growing = c.GetZone(map) as Zone_Growing;
+        var zone_Growing = cell.GetZone(map) as Zone_Growing;
         foreach (var thing in thingList)
         {
             if (thing.def == wantedPlantDef)
@@ -131,19 +131,19 @@ public class WorkGiver_GrowerSowSecondary : WorkGiver_Scanner
 
         if (colonyPlant)
         {
-            Thing edifice = c.GetEdifice(pawn.Map);
+            Thing edifice = cell.GetEdifice(pawn.Map);
             if (edifice == null || edifice.def.fertility < 0f)
             {
                 return null;
             }
         }
 
-        if (wantedPlantDef.plant.interferesWithRoof && c.Roofed(pawn.Map))
+        if (wantedPlantDef.plant.interferesWithRoof && cell.Roofed(pawn.Map))
         {
             return null;
         }
 
-        var plant = c.GetPlant(pawn.Map);
+        var plant = cell.GetPlant(pawn.Map);
         if (plant != null && plant.def.plant.blockAdjacentSow)
         {
             if (!pawn.CanReserve(plant, 1, -1, null, forced) || plant.IsForbidden(pawn))
@@ -161,7 +161,7 @@ public class WorkGiver_GrowerSowSecondary : WorkGiver_Scanner
                 : JobMaker.MakeJob(JobDefOf.CutPlant, plant);
         }
 
-        var thing2 = PlantUtility.AdjacentSowBlocker(wantedPlantDef, c, pawn.Map);
+        var thing2 = PlantUtility.AdjacentSowBlocker(wantedPlantDef, cell, pawn.Map);
         if (thing2 != null)
         {
             if (thing2 is not Plant plant2 ||
@@ -225,13 +225,14 @@ public class WorkGiver_GrowerSowSecondary : WorkGiver_Scanner
                 : JobMaker.MakeJob(JobDefOf.CutPlant, thing3);
         }
 
-        if (!wantedPlantDef.CanEverPlantAt(c, pawn.Map) || !PlantUtility.GrowthSeasonNow(c, pawn.Map, wantedPlantDef) ||
-            !pawn.CanReserve(c))
+        if (!wantedPlantDef.CanEverPlantAt(cell, pawn.Map) ||
+            !PlantUtility.GrowthSeasonNow(cell, pawn.Map, wantedPlantDef) ||
+            !pawn.CanReserve(cell))
         {
             return null;
         }
 
-        return new Job(ZenDefOf.ZEN_PlantsSowSecondary, c)
+        return new Job(ZenDefOf.ZEN_PlantsSowSecondary, cell)
         {
             plantDefToSow = wantedPlantDef
         };
